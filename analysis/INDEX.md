@@ -4,7 +4,8 @@
 
 | 日期 | 文件 | 主题 | 框架版本 |
 |---|---|---|---|
-| 2026-05-11 | `2026-05-11_v0.8_framework_application.md` | **v0.8 框架应用：ASTS 财报应对 + 组合体检** | **v0.8** |
+| 2026-05-11 | `2026-05-11_execution_plan_and_asts_playbook.md` | **周一执行计划 + ASTS 财报 4 情境手册 + LITX 迷你案例**（首个完整案例归档）| **v0.8** |
+| 2026-05-11 | `2026-05-11_v0.8_framework_application.md` | v0.8 框架应用：ASTS 财报应对 + 组合体检 | v0.8 |
 | 2026-05-11 | `2026-05-11_deep_dive_asts_crwv_capital_deployment.md` | ASTS 最优解 + CRWV 处理 + 资金部署（MU +47% 发现）| v0.6（pre v0.8）|
 | 2026-05-11 | `2026-05-11_evening_decisions_review.md` | 用户拟定 5 个明早动作的诊断 | v0.6 |
 | 2026-05-11 | `2026-05-11_pre_market_briefing.md` | 美伊战争 / SPY 估值 / ASTS 财报 / 6 标的诊断 | v0.6 |
