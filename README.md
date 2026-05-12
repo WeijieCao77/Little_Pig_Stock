@@ -23,13 +23,19 @@
 │       ├── CHANGELOG.md                     # 版本历史与变化
 │       ├── framework_v0.6.md                # 旧版本归档
 │       └── framework_v0.6_original.pdf
-└── analysis/
-    ├── INDEX.md                             # 分析索引（按时间倒序）
-    ├── 2026-05-11_v0.8_framework_application.md   # 最新：v0.8 框架应用
-    ├── 2026-05-11_deep_dive_asts_crwv_capital_deployment.md
-    ├── 2026-05-11_evening_decisions_review.md
-    ├── 2026-05-11_pre_market_briefing.md
-    └── 2026-05-10_portfolio_review.md       # 起点：客户画像
+├── analysis/
+│   ├── INDEX.md                             # 分析索引（按时间倒序）
+│   ├── 2026-05-13_execution_checklist_and_optical_walkthrough.md
+│   ├── 2026-05-12_holdings_update_and_ops_review.md
+│   ├── 2026-05-12_ai_datacenter_connectivity_bernstein.md
+│   ├── 2026-05-11_execution_plan_and_asts_playbook.md
+│   ├── 2026-05-11_v0.8_framework_application.md
+│   ├── 2026-05-11_deep_dive_asts_crwv_capital_deployment.md
+│   ├── 2026-05-11_evening_decisions_review.md
+│   ├── 2026-05-11_pre_market_briefing.md
+│   └── 2026-05-10_portfolio_review.md       # 起点：客户画像
+└── tools/
+    └── tv_market_structure.pine             # TradingView 指标：顶底 + BOS/CHoCH（看图辅助，非信号）
 ```
 
 ## 策略框架（v0.8）
