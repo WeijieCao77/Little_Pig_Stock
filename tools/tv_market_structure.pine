@@ -5,22 +5,22 @@
 //  用它"看清现在的结构和关键价位"——不要把它当成"在这里买/在这里卖"的箭头照单全收。
 //
 //  怎么用（手机 TradingView app）：
-//   1. 打开任意股票图 → 右下角"指标(fx)" → 右上角"..."或"我的脚本" → 进 Pine 编辑器
-//      （手机版：底部菜单 → Pine 编辑器；或网页版编辑保存后,手机会同步到"我的脚本"）
-//   2. 把这整个文件内容粘进去 → "保存" → "添加到图表"
-//   3. 之后在手机上对任意股票,从"指标 → 我的脚本"里选它即可
-//   4. 设置里可调"摆动点回看长度":数字小=标小波动(短线),大=只标大顶底(波段)
+//   1. 任意股票图 → Pine 编辑器 → 把这整个文件内容粘进去 → "保存" → "添加到图表"
+//   2. 之后在手机上对任意股票,从"指标 → 我的脚本"里选它即可
+//   3. 设置里可调"摆动点回看长度 N":5≈短线敏感 / 10-15≈中等 / 20+≈只标大顶底
 //
 //  概念速查（这指标在图上标的东西）：
 //   · 摆动高/低 (swing high/low) = 局部最高/最低的那根 K（左右各 N 根都没它高/低）
 //   · HH 更高的高 / HL 更高的低 = 上升结构；LH 更低的高 / LL 更低的低 = 下降结构
-//   · BOS (Break of Structure / 你截图里的"BMS") = 价格突破上一个摆动高/低,顺着原趋势 → 趋势延续
+//   · BOS (Break of Structure / 你截图里的"BMS") = 突破上一个摆动高/低,顺着原趋势 → 趋势延续
 //   · CHoCH (Change of Character) = 第一次反方向突破结构 → 趋势可能要转
 //   · 关键水平线 = 最近一个摆动高 / 摆动低的价位（常被当支撑/阻力 & 止损参考）
 //
-//  ⚠️ 重要：这是"技术分析 / SMC 风格"的辅助看图工具,和你的 v0.8 事件驱动框架、
-//      core/satellite 仓位计划是两回事——别因为图上画了个"BOS↑"就去建仓。
-//      尤其在 6 周新户、最大问题是高换手的情况下,把它当"读上下文",不是"读信号"。
+//  ⚠️ 这是"技术分析 / SMC 风格"的辅助看图工具,和 v0.8 事件驱动框架、core/satellite
+//      仓位计划是两回事——别因为图上画了个"BOS↑"就去建仓。当"读上下文",不是"读信号"。
+//
+//  [v2 修正] Pine v5 不允许在自定义函数里改全局变量,所以去掉了 f_zz() 函数,把连线逻辑
+//      内联到 ph/pl 两个分支里 —— 修复了 "Cannot modify global variable 'zzBar' in function"。
 // =============================================================================
 
 //@version=5
@@ -56,21 +56,15 @@ var float prevPH    = na
 var float lastPL    = na
 var int   lastPLbar = na
 var float prevPL    = na
+var int   zzBar     = na    // zigzag: 上一个画点
+var float zzPrice   = na
+var int   bias      = 0     // 1=看多结构 / -1=看空结构 / 0=未定
+var bool  phBroken  = false
+var bool  plBroken  = false
+var line  lvlHi     = na
+var line  lvlLo     = na
 
-var int   zzBar   = na   // zigzag: 上一个画点
-var float zzPrice = na
-
-var int   bias    = 0    // 1=看多结构(上次破的是高点) / -1=看空结构 / 0=未定
-var bool  phBroken = false
-var bool  plBroken = false
-
-f_zz(_b, _p) =>
-    if showZigzag and not na(zzBar)
-        line.new(zzBar, zzPrice, _b, _p, xloc=xloc.bar_index, color=color.new(color.gray, 55), width=1)
-    zzBar := _b
-    zzPrice := _p
-
-// 出现新的摆动高 → 重置"是否已突破"、记录、标注、连线
+// ---------------- 出现新的摆动高 ----------------
 if not na(ph)
     int pbar = bar_index - pivotLen
     prevPH := lastPH
@@ -80,9 +74,12 @@ if not na(ph)
     if showHLLabels
         bool isHH = na(prevPH) or ph > prevPH
         label.new(pbar, ph, isHH ? "HH" : "LH", style=label.style_label_down, color=color.new(colDn, 82), textcolor=colDn, size=size.tiny)
-    f_zz(pbar, ph)
+    if showZigzag and not na(zzBar)
+        line.new(zzBar, zzPrice, pbar, ph, xloc=xloc.bar_index, color=color.new(color.gray, 55), width=1)
+    zzBar := pbar
+    zzPrice := ph
 
-// 出现新的摆动低
+// ---------------- 出现新的摆动低 ----------------
 if not na(pl)
     int pbar = bar_index - pivotLen
     prevPL := lastPL
@@ -92,12 +89,14 @@ if not na(pl)
     if showHLLabels
         bool isLL = na(prevPL) or pl < prevPL
         label.new(pbar, pl, isLL ? "LL" : "HL", style=label.style_label_up, color=color.new(colUp, 82), textcolor=colUp, size=size.tiny)
-    f_zz(pbar, pl)
+    if showZigzag and not na(zzBar)
+        line.new(zzBar, zzPrice, pbar, pl, xloc=xloc.bar_index, color=color.new(color.gray, 55), width=1)
+    zzBar := pbar
+    zzPrice := pl
 
 // ---------------- BOS / CHoCH ----------------
 float refUp = useClose ? close : high
 float refDn = useClose ? close : low
-
 bullBreak = not na(lastPH) and not phBroken and refUp > lastPH
 bearBreak = not na(lastPL) and not plBroken and refDn < lastPL
 
@@ -118,15 +117,12 @@ if bearBreak
     plBroken := true
 
 // ---------------- 关键水平线（最近一个摆动高/低）----------------
-var line lvlHi = na
-var line lvlLo = na
-if showLevels
-    if not na(ph)
-        line.delete(lvlHi)
-        lvlHi := line.new(lastPHbar, lastPH, bar_index, lastPH, xloc=xloc.bar_index, color=color.new(colDn, 35), width=1, extend=extend.right)
-    if not na(pl)
-        line.delete(lvlLo)
-        lvlLo := line.new(lastPLbar, lastPL, bar_index, lastPL, xloc=xloc.bar_index, color=color.new(colUp, 35), width=1, extend=extend.right)
+if showLevels and not na(ph)
+    line.delete(lvlHi)
+    lvlHi := line.new(lastPHbar, lastPH, bar_index, lastPH, xloc=xloc.bar_index, color=color.new(colDn, 35), width=1, extend=extend.right)
+if showLevels and not na(pl)
+    line.delete(lvlLo)
+    lvlLo := line.new(lastPLbar, lastPL, bar_index, lastPL, xloc=xloc.bar_index, color=color.new(colUp, 35), width=1, extend=extend.right)
 
 // ---------------- 右上角小信息板 ----------------
 var table info = table.new(position.top_right, 1, 3, border_width=1)
