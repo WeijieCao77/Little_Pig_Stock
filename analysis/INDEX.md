@@ -4,6 +4,7 @@
 
 | 日期 | 文件 | 主题 | 框架版本 |
 |---|---|---|---|
+| 2026-05-12 | `2026-05-12_holdings_update_and_ops_review.md` | 持仓更新 + 5/11–5/12 操作逐笔评价（ASTS/CRWV 纪律性退出 A+；NVDA 3天期权 F；CIEN 超额建仓）+ GOOG 卖出决策 + 客户画像 v2 草稿 | 框架外（仓位管理）|
 | 2026-05-12 | `2026-05-12_ai_datacenter_connectivity_bernstein.md` | Bernstein《AI 数据中心连接大战》研报总结 + 散户视角分析（主题/watch list 输入，非催化剂）| 框架外（Layer 1）|
 | 2026-05-11 | `2026-05-11_execution_plan_and_asts_playbook.md` | **周一执行计划 + ASTS 财报 4 情境手册 + LITX 迷你案例**（首个完整案例归档）| **v0.8** |
 | 2026-05-11 | `2026-05-11_v0.8_framework_application.md` | v0.8 框架应用：ASTS 财报应对 + 组合体检 | v0.8 |
