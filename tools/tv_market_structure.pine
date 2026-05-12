@@ -1,41 +1,52 @@
 // =============================================================================
-//  TradingView 指标 — 市场结构 / 顶底 + BOS / CHoCH（新手版）
+//  TradingView 指标 — 市场结构 顶底 + BOS/CHoCH + BOS 回调参考区（新手版 v3）
 //  作者注：给 PM 的"看图辅助"工具,不是交易信号系统。
-//  用途：自动标出 摆动高/低(顶/底)、HH/HL/LH/LL、结构突破(BOS/CHoCH)、最近关键水平线。
-//  用它"看清现在的结构和关键价位"——不要把它当成"在这里买/在这里卖"的箭头照单全收。
+//
+//  v3 新增：每次出现确认的 BOS / CHoCH,自动框出一个"回调参考区"+ 一条"参考止损线"——
+//   · 多头(向上突破后)：阴影框 = 启动这波的摆动低 ~ 被突破的摆动高 之间；参考止损 = 摆动低下方
+//   · 空头(向下突破后)：阴影框 = 被突破的摆动低 ~ 启动这波的摆动高 之间；参考止损 = 摆动高上方
+//   ⚠️ 这是"值得留意的区,不是'点这里买/卖'的信号"。要不要进、进多少,仍然是你的判断,
+//      并且必须先走完"评估长期持仓 6 步"。这工具帮你读上下文,不替你决策。
 //
 //  怎么用（手机 TradingView app）：
-//   1. 任意股票图 → Pine 编辑器 → 把这整个文件内容粘进去 → "保存" → "添加到图表"
-//   2. 之后在手机上对任意股票,从"指标 → 我的脚本"里选它即可
-//   3. 设置里可调"摆动点回看长度 N":5≈短线敏感 / 10-15≈中等 / 20+≈只标大顶底
+//   1. 任意股票图 → Pine 编辑器 → 全选删掉旧内容 → 把这整个文件粘进去 → "保存" → "添加到图表"
+//   2. 如果之前已经加过旧版:先把图上的旧指标删掉,再重新"添加到图表"(新增的参数才会出现)
+//   3. 设置里:"摆动点回看长度 N" 5≈短线 / 10-15≈中等 / 20+≈只标大顶底；"参考区"那组可整组关掉
 //
-//  概念速查（这指标在图上标的东西）：
-//   · 摆动高/低 (swing high/low) = 局部最高/最低的那根 K（左右各 N 根都没它高/低）
+//  概念速查：
+//   · 摆动高/低 = 局部最高/最低的 K（左右各 N 根都没它高/低）
 //   · HH 更高的高 / HL 更高的低 = 上升结构；LH 更低的高 / LL 更低的低 = 下降结构
-//   · BOS (Break of Structure / 你截图里的"BMS") = 突破上一个摆动高/低,顺着原趋势 → 趋势延续
-//   · CHoCH (Change of Character) = 第一次反方向突破结构 → 趋势可能要转
-//   · 关键水平线 = 最近一个摆动高 / 摆动低的价位（常被当支撑/阻力 & 止损参考）
+//   · BOS (= 你截图里的"BMS") = 顺势突破上一个摆动高/低 → 趋势延续
+//   · CHoCH = 第一次反方向突破结构 → 趋势可能要转（早期预警,常假信号）
+//   · 关键水平线 = 最近一个摆动高/低（常用作支撑阻力 & 止损参考）
 //
-//  ⚠️ 这是"技术分析 / SMC 风格"的辅助看图工具,和 v0.8 事件驱动框架、core/satellite
-//      仓位计划是两回事——别因为图上画了个"BOS↑"就去建仓。当"读上下文",不是"读信号"。
+//  ⚠️ 这是 SMC/技术分析风格的辅助工具,和你的 v0.8 事件驱动框架、core/satellite 仓位计划是两回事。
+//      尤其在 6 周新户、最大问题是高换手的情况下,当"读上下文",不是"看到框/箭头就交易"。
 //
-//  [v2 修正] Pine v5 不允许在自定义函数里改全局变量,所以去掉了 f_zz() 函数,把连线逻辑
-//      内联到 ph/pl 两个分支里 —— 修复了 "Cannot modify global variable 'zzBar' in function"。
+//  [修订记录]
+//   v2: Pine v5 不允许在自定义函数里改全局变量 → 去掉 f_zz(),连线逻辑内联
+//   v3: 新增 BOS/CHoCH 回调参考区 + 参考止损线
 // =============================================================================
 
 //@version=5
-indicator("市场结构 顶底+BOS/CHoCH (新手版)", overlay=true, max_lines_count=500, max_labels_count=500)
+indicator("市场结构 顶底+BOS/CHoCH+参考区 (新手版)", overlay=true, max_lines_count=500, max_labels_count=500, max_boxes_count=50)
 
 // ---------------- 输入参数 ----------------
 gS = "结构识别"
 pivotLen     = input.int(10, "摆动点回看长度 N (左右各看 N 根)", minval=2, group=gS, tooltip="5≈短线敏感 / 10-15≈中等 / 20+≈只标大级别顶底")
-showHLLabels = input.bool(true,  "标注 HH / HL / LH / LL", group=gS)
-showZigzag   = input.bool(true,  "顶底连线 (zigzag)", group=gS)
+showHLLabels = input.bool(true, "标注 HH / HL / LH / LL", group=gS)
+showZigzag   = input.bool(true, "顶底连线 (zigzag)", group=gS)
 
 gB = "结构突破 (BOS / CHoCH)"
-showBOS   = input.bool(true,  "显示 BOS (顺势突破)", group=gB)
-showCHoCH = input.bool(true,  "显示 CHoCH (转势突破)", group=gB)
-useClose  = input.bool(true,  "用收盘价确认突破 (关掉=用影线)", group=gB)
+showBOS   = input.bool(true, "显示 BOS (顺势突破)", group=gB)
+showCHoCH = input.bool(true, "显示 CHoCH (转势突破)", group=gB)
+useClose  = input.bool(true, "用收盘价确认突破 (关掉=用影线)", group=gB)
+
+gZ = "BOS 回调参考区（仅供看图参考,不是买卖信号）"
+showZones  = input.bool(true, "显示参考区 + 参考止损线", group=gZ)
+zoneExtend = input.int(30, "参考区向右延伸 K 线数", minval=5, group=gZ)
+colZoneUp  = input.color(color.new(#26a69a, 88), "多头参考区底色", group=gZ)
+colZoneDn  = input.color(color.new(#ef5350, 88), "空头参考区底色", group=gZ)
 
 gL = "关键水平线"
 showLevels = input.bool(true, "画出最近一个摆动高/低的水平线", group=gL)
@@ -56,13 +67,15 @@ var float prevPH    = na
 var float lastPL    = na
 var int   lastPLbar = na
 var float prevPL    = na
-var int   zzBar     = na    // zigzag: 上一个画点
+var int   zzBar     = na
 var float zzPrice   = na
-var int   bias      = 0     // 1=看多结构 / -1=看空结构 / 0=未定
+var int   bias      = 0
 var bool  phBroken  = false
 var bool  plBroken  = false
 var line  lvlHi     = na
 var line  lvlLo     = na
+var box   bosZone   = na
+var line  bosStop   = na
 
 // ---------------- 出现新的摆动高 ----------------
 if not na(ph)
@@ -94,7 +107,7 @@ if not na(pl)
     zzBar := pbar
     zzPrice := pl
 
-// ---------------- BOS / CHoCH ----------------
+// ---------------- BOS / CHoCH (+ 回调参考区 + 参考止损线) ----------------
 float refUp = useClose ? close : high
 float refDn = useClose ? close : low
 bullBreak = not na(lastPH) and not phBroken and refUp > lastPH
@@ -105,6 +118,13 @@ if bullBreak
     if (isCH and showCHoCH) or (not isCH and showBOS)
         line.new(lastPHbar, lastPH, bar_index, lastPH, xloc=xloc.bar_index, color=isCH ? colCH : colBOS, width=2, style=line.style_dashed)
         label.new(bar_index, lastPH, isCH ? "CHoCH ↑" : "BOS ↑", style=label.style_label_down, color=color.new(isCH ? colCH : colBOS, 72), textcolor=isCH ? colCH : color.gray, size=size.tiny)
+    if showZones and not na(lastPL)
+        float zTop = math.max(lastPH, lastPL)
+        float zBot = math.min(lastPH, lastPL)
+        box.delete(bosZone)
+        line.delete(bosStop)
+        bosZone := box.new(left=bar_index, top=zTop, right=bar_index + zoneExtend, bottom=zBot, xloc=xloc.bar_index, border_color=color.new(colUp, 45), border_width=1, bgcolor=colZoneUp, text="多头回调参考区  止损<" + str.tostring(zBot, format.mintick), text_size=size.tiny, text_color=colUp, text_halign=text.align_left, text_valign=text.align_top)
+        bosStop := line.new(bar_index, zBot, bar_index + zoneExtend, zBot, xloc=xloc.bar_index, color=color.new(colDn, 25), style=line.style_dotted, width=1)
     bias := 1
     phBroken := true
 
@@ -113,6 +133,13 @@ if bearBreak
     if (isCH and showCHoCH) or (not isCH and showBOS)
         line.new(lastPLbar, lastPL, bar_index, lastPL, xloc=xloc.bar_index, color=isCH ? colCH : colBOS, width=2, style=line.style_dashed)
         label.new(bar_index, lastPL, isCH ? "CHoCH ↓" : "BOS ↓", style=label.style_label_up, color=color.new(isCH ? colCH : colBOS, 72), textcolor=isCH ? colCH : color.gray, size=size.tiny)
+    if showZones and not na(lastPH)
+        float zTop = math.max(lastPH, lastPL)
+        float zBot = math.min(lastPH, lastPL)
+        box.delete(bosZone)
+        line.delete(bosStop)
+        bosZone := box.new(left=bar_index, top=zTop, right=bar_index + zoneExtend, bottom=zBot, xloc=xloc.bar_index, border_color=color.new(colDn, 45), border_width=1, bgcolor=colZoneDn, text="空头反弹参考区  止损>" + str.tostring(zTop, format.mintick), text_size=size.tiny, text_color=colDn, text_halign=text.align_left, text_valign=text.align_bottom)
+        bosStop := line.new(bar_index, zTop, bar_index + zoneExtend, zTop, xloc=xloc.bar_index, color=color.new(colDn, 25), style=line.style_dotted, width=1)
     bias := -1
     plBroken := true
 
