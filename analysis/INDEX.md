@@ -4,6 +4,7 @@
 
 | 日期 | 文件 | 主题 | 框架版本 |
 |---|---|---|---|
+| 2026-05-12 | `2026-05-12_ai_datacenter_connectivity_bernstein.md` | Bernstein《AI 数据中心连接大战》研报总结 + 散户视角分析（主题/watch list 输入，非催化剂）| 框架外（Layer 1）|
 | 2026-05-11 | `2026-05-11_execution_plan_and_asts_playbook.md` | **周一执行计划 + ASTS 财报 4 情境手册 + LITX 迷你案例**（首个完整案例归档）| **v0.8** |
 | 2026-05-11 | `2026-05-11_v0.8_framework_application.md` | v0.8 框架应用：ASTS 财报应对 + 组合体检 | v0.8 |
 | 2026-05-11 | `2026-05-11_deep_dive_asts_crwv_capital_deployment.md` | ASTS 最优解 + CRWV 处理 + 资金部署（MU +47% 发现）| v0.6（pre v0.8）|
