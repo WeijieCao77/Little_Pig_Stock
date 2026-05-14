@@ -269,6 +269,157 @@
 
 ---
 
+## 七、催化剂日历 + 推动因素(只针对"确实在(相对)低点"的名字)
+
+> 用户要求:对 v2 里**确实在低点 / 相对低点**的标的,进一步分析**宏观叙事 + 微观催化剂**——哪些新闻/事件可能继续推动它们上涨。
+> 范围:**只对以下 6 个名字深挖**(其它如 CCJ +150% YoY、SYM +167% YoY 不在"低点"范畴,不重复):
+> - 军工: **LMT** (-25% from 52w 高)
+> - 无人机: **AVAV / KTOS** (YTD -9~-12%)
+> - 核能/铀: **URNM / OKLO / NNE**(中位或下行后,但有近期催化)
+
+### A. 跨板块宏观背景 —— **3 个能 push 也能 kill 全板块的大故事**
+
+#### A1. 2026 Iran 战争(2 月起 active)—— 反直觉地利空 defense
+
+- **Brent 原油从 $70s 跳到 ~$100**(+35-45%);通胀压力回升
+- 但 **ITA(国防 ETF)自 3 月以来跌 ~12%、SPY 涨 3.5%** —— defense 反而跑输
+- **LMT 单季跌 13%、RTX 跌 11%** —— Q1 财报全年指引 miss,叠加 "Trump 推 Iran 谈判" 的 peace narrative
+- BoA 分析师 Ron Epstein:**"和平(Iran / Ukraine)对人类好,对 defense 不好"**
+- → **含义**:LMT 这次 -25% pullback 不只是估值轮动,是 "Iran 战争 + 财报 miss + 谈判 narrative" 三重压制。
+  推动**反弹**需要:谈判破裂 / Iran 进一步升级 / Q2 财报 beat / Golden Dome 大单加码。
+
+#### A2. Fed 利率 —— **2026 大概率不降息**(三大行口径)
+
+- 4/29 FOMC:维持 **3.50-3.75%**
+- 下次 FOMC:**6/16-17**(带新经济和利率预期)
+- Goldman:首次降息推到 **12/2026**;再下一次 3/2027
+- Barclays:**2026 不降息**(因 Iran 战争推高能源价格)
+- JPM:**全年 hold,下次甚至可能 +25bp**
+- → **含义**:利率高位继续 = 重资本核电(SMR/OKLO 类)估值压力大、防御股相对受益(分红 anchor 抗高利率)。**对 LMT 反而是支撑** — 高利率环境下大盘分红股更稀缺。
+  关键 watch 日期:**6/16-17 FOMC** (大概率 hold,但 dot-plot 变动就是市场反应触发)。
+
+#### A3. Trump 政策摇摆 —— **3 个方向都可能动**
+
+- Iran:**推谈判 → 利空 defense**;升级 → 利多
+- Ukraine:推谈判 → 利空 defense + drones;停火破裂/对俄加压 → 利多
+- 中美脱钩:对 DJI 等中国 drone 制裁加码 → 利多 AVAV / RCAT 本土厂
+- 核电:**Trump 签执行令支持核电** = 已是利多;后续 NRC 加速许可、Loan Guarantee 扩张 都是 push
+
+### B. 个股 30-90 天 催化剂日历(实时数据)
+
+#### B1. LMT($521,-25% from 52w 高)
+
+| 日期 / 事件 | 性质 | 推动方向 |
+|---|---|---|
+| **7/21/2026 Q2 财报** | 重大 | 共识 EPS $7.26 / 营收 $19.33B;Q1 已 miss → 市场预期低,**beat 容易触发反弹** |
+| **6/16-17 FOMC** | 中等 | dot-plot 变化影响所有重资本股 |
+| **Golden Dome $10B 太空加速包**(3/2026 宣布)| 重大 | LMT/RTX/NOC 已正式 enlisted 为 prime contractors;**$10B 实际分配未到位** = 后续合同公告就是催化 |
+| **MDA SHIELD $151B 10-year 合同**(1/2026 启动)| 重大 | LMT 已 qualified;**task orders 分批发** — 每次 task order 公告就是催化 |
+| Iran 战争升级 / 谈判破裂 | 重大 | 利多;但反向(谈判推进)也是真实风险 |
+| F-35 PAC-3/MSE 245 枚订单 | 中等 | 已知,逐步交付 |
+| **风险方向**:Iran 谈判推进 / 全年指引继续 miss / Trump 国防预算砍小项目 | — | LMT 已经被打 -25%,继续下行需要"基本面 + 政治"双杀 |
+
+#### B2. AVAV($168.86,YTD -9~-12%)
+
+| 日期 / 事件 | 性质 | 推动方向 |
+|---|---|---|
+| **6/23/2026 财报**(下次,FY26 Q4)| 重大 | 上次 FY26 Q2 EPS $0.64;**$1.1B backlog 兑现节奏** 是关键看点 |
+| **US-Ukraine 大型 drone 协议** | 重大 | 协议在推进中;一旦官宣 = 直接利好 AVAV(Switchblade 主供应商之一)|
+| **Ukraine 25,000 ground robots H1 2026 + 50,000/年目标** | 重大 | 持续需求,虽然不全是 AVAV,但生态拉动 |
+| **British 120,000 drones to Ukraine 2026** | 中等 | 已开始交付 |
+| Switchblade 600 在 Replicator 公开确认 | 已发生 | 已 price in 部分,但每次 Replicator tranche 公告还会刺激 |
+| Anduril IPO 上市 | 重大 (利空) | 一旦上市会**抢 AVAV 估值溢价** |
+| **风险**:Iran/Ukraine 任一停火 / Trump 砍 Replicator 预算 / Anduril 上市估值挤压 | — | 这是 drone 整体板块的下行风险 |
+
+#### B3. KTOS($57.33,YTD -9~-12%)
+
+| 日期 / 事件 | 性质 | 推动方向 |
+|---|---|---|
+| **KTOS 已 raised 2026 outlook + expanded backlog** | 已发生 (利好) | **但股价反而 -9.6%** = 可能是错杀(共识担心 forward,被忽视的 setup)|
+| **XQ-58A Valkyrie 在 $350M Replicator initiative 中心** | 重大 | 持续催化,每次部署 / 合同公告都推 |
+| 新签 $7M counter-drone 合同 | 小,但增量 | 反映 counter-UAS 业务上量 |
+| 下次财报 | 重大 | 8 月初(典型 Q1/Q2 节奏)|
+| **风险**:同 AVAV(地缘 / Anduril IPO) | — | 同 AVAV |
+
+#### B4. URNM($64.99 / 铀板块)
+
+| 日期 / 事件 | 性质 | 推动方向 |
+|---|---|---|
+| **CCJ 签 $2.6B 印度长期供应协议** | 重大 (已发生) | 验证全球 utility 抢供应、铀长期合约价已上 |
+| **TradeTech 长期价 $93/lb vs 现货 $86** | 重大 | 长期/现货剪刀差扩大 = 价格上行预期 |
+| **BoA / 大行 PT 铀价 $135/lb by 2027** | 重大 | 行业共识看涨 |
+| 大科技 20-year nuclear PPAs(微软/Amazon/Meta)| 重大 | 持续签,每签一个就推 URNM/CCJ |
+| Cameco Q2 2026 财报(约 7/30) | 重大 | Q1 已 beat 30%,看连续 trend |
+| OKLO / NNE 等 SMR 商业化进展(见 B5/B6)| 中等 | 推动整个核能 narrative |
+| **风险**:铀现货回落到 $70s / 大型 PPA 协议被砍 / SMR 接连暴雷拖累板块情绪 | — | — |
+
+#### B5. OKLO($69.64 vs 分析师 PT $101.79 = +46% upside)
+
+| 日期 / 事件 | 性质 | 推动方向 |
+|---|---|---|
+| **🔴 7/4/2026 Groves 反应堆 临界(criticality)目标** | **重大,二元** | 真 critical = 巨大利好;延期 = 重大利空(NuScale 就是延期/失败的教科书) |
+| **$2.58B 现金 war chest**($1.4B 年底 + $1.18B Jan ATM)| 利好 (已发生) | 给执行能力 anchor |
+| Aurora-INL DOE OTA 已签 + DOE 核安全设计协议 | 重大 (已发生) | 监管路径清晰化 |
+| DOE Radioisotope 设施合作(癌症/医疗)| 中等 | 新营收路径 |
+| 17 个分析师 Buy,PT $101.79 | 共识 | 已 price in 部分;追上需要 catalyst 兑现 |
+| Q2 财报(约 8 月初) | 重大 | 烧钱速度 + 客户漏斗更新 |
+| **风险**:Groves 临界延期 / 监管 hiccup / 客户合同破裂 → 立即 -30%+ | — | OKLO 是赌场仓位,不是核心 |
+
+#### B6. NNE / NANO Nuclear
+
+| 日期 / 事件 | 性质 | 推动方向 |
+|---|---|---|
+| **🔴 今天 5/14 下午 5pm ET Q2 2026 财报** | **重大,二元,今天就要发生** | KRONOS 进度 + 现金消耗指引;**今天后回看这条 catalyst 是否兑现** |
+| **Supermicro AI 数据中心 MOU**(5/6 签) | 重大 (已发生) | 第一个大型 AI 直接合作伙伴 |
+| $577.5M 现金($400M private placement 完成) | 利好 | 烧钱能撑很久 |
+| KRONOS 微反应堆 **US + Canada licensing 推进** | 中等 | 监管节奏决定商业化时间 |
+| **风险**:今天 Q2 报告烧钱速度超预期 → 立即 -20%+ | — | NNE 也是赌场仓位 |
+
+### C. 这些催化剂该怎么"用"(对应 v0.8 框架)
+
+按你 v0.8 框架:
+- **Stage A**(财报/事件 pre-event run-up):LMT 7/21、AVAV 6/23、OKLO 7/4 Groves 临界、NNE 今晚 — 这几个**可以走 Stage A 流程**
+  - 注意:**Stage A 不是"现在就买"**,是按框架 §5 的 5 层信号 + 仓位 + 触发条件来
+- **Stage B**(财报后顺势跟随):跌出 beat 之后的 3-5 天通常是顺势机会
+- **Stage C**(反向 PEAD):漂移信号(Volume 异常 + 反应平淡)— 你目前 L1 状态,识别不交易
+- **长期/核心**(LMT 重组成 core/satellite 一部分):**不择时,starter + DCA**
+
+### D. 反向风险:能 push **下跌**的事件(防守清单)
+
+同一份催化剂日历的"对立面",一旦发生就是利空:
+1. **Iran 停火协议达成** → defense / drone 板块 -10~-20%(BoA 已警告)
+2. **Ukraine 停火 / Trump 推动俄乌谈判** → 同上
+3. **AI capex guidance 下调**(MSFT/META/GOOG 财报口径)→ 核电 + 数据中心 ETF 同跌
+4. **Fed 5/6 月会议鹰派 +25bp** → 重资本核电 estimated 估值压缩
+5. **SMR (NuScale)继续暴雷 / OKLO Groves 延期** → 整个 SMR 类被砍
+6. **Anduril IPO 落地** → AVAV/KTOS 估值挤压
+7. **Trump 国防预算砍小项目** → KTOS/RCAT 等小盘 drone 受伤
+
+### E. 给你的 watch list 日期(抄到日历)
+
+| 日期 | 事件 | 影响标的 |
+|---|---|---|
+| **2026-05-14 today 5pm ET** | NNE Q2 财报 | NNE |
+| **2026-06-16-17** | FOMC + dot-plot | 全市场;核电估值;defense 分红股 |
+| **2026-06-23** | AVAV 财报 | AVAV;drone 板块 |
+| **2026-07-04 目标** | OKLO Groves 反应堆临界 | OKLO,SMR 板块情绪 |
+| **2026-07-21** | LMT Q2 财报 | LMT,defense 板块 |
+| **2026-07 底 / 2026-08** | Tesla Optimus V3 reveal | TSLA,BOTZ,robotics 板块 |
+| **2026-07-30 (约)** | CCJ Q2 财报 | CCJ,URNM,铀板块 |
+| **2026-08-初 (约)** | KTOS、OKLO Q2 财报 | KTOS,OKLO |
+| 持续 | Golden Dome task orders(MDA SHIELD 项下)| LMT/RTX/NOC/GD/BAH |
+| 持续 | Iran / Ukraine 战争状态 | 全 defense / drone / 能源 |
+
+### F. 一句话总结
+
+**用户原问题的真答案**:这 6 个"在低点"的名字**不会无缘无故被拉起来**——每一个都有**具体的、可以提前查的催化剂日历**。但**催化剂是双刃剑**:LMT 7/21 财报 beat 是利好,miss 是再杀一刀;OKLO 7/4 临界成功是 +50%,延期是 -30%。
+
+**实操含义**:你**不应该在催化剂日前一天 all-in**(那叫赌博)。正确做法 = 按 v0.8 框架的 Stage A 做 pre-event run-up(已建立的策略),或者 **DCA 慢慢建仓让催化剂自然发酵**。两种都比"赌财报"健康。
+
+**最后,记住**:你 5/13 de-scatter **还没做完**(CIEN 还有、对冲为 0、QCOM/MRNA/ASTS 没 thesis)。**先把这些清完,再谈用催化剂日历去建新仓**。规则不是给你看的,是给你这种时刻用的。
+
+---
+
 ## 附录:数据来源(2026-05-13 / 14 WebSearch)
 
 ### 核能 / 铀
@@ -308,6 +459,40 @@
 - [Golden Dome $1.2T CBO estimate — US News 5/12/2026](https://www.usnews.com/news/top-news/articles/2026-05-12/us-budget-watchdog-estimates-golden-dome-will-cost-1-2-trillion-well-above-initial-185-billion-estimate)
 - [Golden Dome cost $1.2T — NPR 5/13/2026](https://www.npr.org/2026/05/13/g-s1-121780/trumps-golden-dome-cost)
 - [US Defense Spending +17% — Arms Control Association](https://www.armscontrol.org/act/2026-03/news/us-defense-spending-rises-more-17-percent)
+
+### 催化剂 / 财报日期 / 宏观(第七节新增 sources)
+
+- [Lockheed Martin LMT Q2 2026 Earnings — Meyka](https://meyka.com/blog/lmt-lockheed-martin-q2-2026-earnings-awaiting-results-2004/)
+- [LMT Earnings Calendar — Nasdaq](https://www.nasdaq.com/market-activity/stocks/lmt/earnings)
+- [AeroVironment AVAV Earnings Date — MarketBeat](https://www.marketbeat.com/stocks/NASDAQ/AVAV/earnings/)
+- [AeroVironment FY26 Q2 Results — Investor Relations](https://investor.avinc.com/news-releases/news-release-details/aerovironment-announces-fiscal-2026-second-quarter-results)
+- [KTOS Raises 2026 Outlook + Backlog — Simply Wall St](https://simplywall.st/stocks/us/capital-goods/nasdaq-ktos/kratos-defense-security-solutions/news/why-kratos-ktos-is-down-96-after-raising-its-2026-outlook-an)
+- [Kratos Counter-UAS $7M Contract — StockTitan](https://www.stocktitan.net/news/KTOS/kratos-receives-7-million-order-for-counter-uas-z1tdyc46sgzn.html)
+- [SpaceX, Anduril Win Golden Dome Contracts — Fortune 4/25/2026](https://fortune.com/2026/04/25/spacex-anduril-lockheed-raytheon-northrop-golden-dome-interceptor-contracts/)
+- [Pentagon $151B SHIELD Award for Golden Dome — Defense Security Monitor](https://dsm.forecastinternational.com/2026/01/16/pentagon-mobilizes-industrial-base-for-golden-dome-missile-shield-with-151b-shield-award/)
+- [Cameco Q1 2026 Results — Cameco IR](https://www.cameco.com/media/news/cameco-reports-2026-first-quarter-results)
+- [Cameco $2.6B India Long-Term Uranium Deal — StockTitan](https://www.stocktitan.net/sec-filings/CCJ/6-k-cameco-corp-current-report-foreign-issuer-70c2a791125c.html)
+- [Oklo Q1 2026 Earnings Call Transcript — Motley Fool 5/13/2026](https://www.fool.com/earnings/call-transcripts/2026/05/13/oklo-oklo-q1-2026-earnings-call-transcript/)
+- [Oklo & DOE Radioisotope Pilot Facility — Oklo Newsroom](https://oklo.com/newsroom/news-details/2026/Oklo-and-DOE-Partner-to-Deploy-Radioisotope-Pilot-Facility-Supporting-Cancer-Care-and-U-S--Medical-Supply-Chains/default.aspx)
+- [Oklo Selected for DOE Reactor Pilot Program — Oklo Newsroom](https://oklo.com/newsroom/news-details/2025/Oklo-Selected-for-Three-Projects-Under-U-S--Department-of-Energys-Reactor-Pilot-Program/default.aspx)
+- [Oklo Stock Awaits NRC and DOE Milestones — InsiderFinance](https://www.insiderfinance.io/news/oklo-stock-awaits-nrc-and-doe-milestones)
+- [DOE Selects Four Companies for Advanced Nuclear Fuel Pilot — DOE](https://www.energy.gov/articles/energy-department-selects-four-companies-advanced-nuclear-fuel-line-pilot-projects)
+- [NANO Nuclear Q1 FY26 Results + $577M Cash — StockTitan](https://www.stocktitan.net/news/NNE/nano-nuclear-reports-q1-fy-2026-financial-results-and-provides-awkjhq74zjnt.html)
+- [NANO Nuclear NNE Earnings Calendar — MarketBeat](https://www.marketbeat.com/stocks/NASDAQ/NNE/earnings/)
+- [Symbotic SYM Q2 2026 Earnings (Revenue $676.5M, Backlog $22.7B) — StockTitan](https://www.stocktitan.net/news/SYM/symbotic-reports-second-quarter-fiscal-year-2026-uc7ef87gezqw.html)
+- [Tesla Optimus V3 Reveal late July / August 2026 — Electrek 4/22/2026](https://electrek.co/2026/04/22/tesla-optimus-production-fremont-model-sx-line/)
+- [Tesla Targets 10M Optimus Units at Texas — The Robot Report](https://www.therobotreport.com/from-evs-to-robotics-tesla-targets-10m-optimus-units-with-new-texas-plant/)
+- [Ukraine to Field 25,000 Ground Robots by Mid-2026 — Newsmax](https://www.newsmax.com/world/globaltalk/ukraine-robots-front-line/2026/05/09/id/1255745/)
+- [US-Ukraine Drone Defense Deal in Works — CBS News](https://www.cbsnews.com/news/ukraine-us-drone-defense-deal-draft-iran-war-capabilities-necessities/)
+- [120,000 British Drones to Ukraine 2026 — Aerospace Global News](https://aerospaceglobalnews.com/news/uk-120000-drones-ukraine-2026/)
+- [Fed Holds Rates 4/29/2026 — CNBC](https://www.cnbc.com/2026/04/29/fed-interest-rate-decision-april-2026.html)
+- [Goldman Delays Fed Cut Forecast — TheStreet](https://www.thestreet.com/investing/goldman-sachs-sends-blunt-message-on-fed-interest-rate-cuts)
+- [JPM: Fed Holds Through 2026 — JP Morgan Global Research](https://www.jpmorgan.com/insights/global-research/economy/fed-rate-cuts)
+- [Defense Stocks Underperform Since Iran War — CNBC 4/28/2026](https://www.cnbc.com/2026/04/28/defense-stocks-have-floundered-since-the-iran-war-began-heres-why.html)
+- [Iran War Impact on Stocks — US News](https://money.usnews.com/investing/articles/iran-war-hormuz-blockade-impact-on-stocks)
+- [2026 Iran War Economic Impact — Wikipedia](https://en.wikipedia.org/wiki/Economic_impact_of_the_2026_Iran_war)
+- [Iran War Impact — Morgan Stanley](https://www.morganstanley.com/insights/articles/iran-war-oil-inflation-stock-market-2026)
+- [FOMC Calendar — Federal Reserve](https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm)
 
 ### 数据声明
 
