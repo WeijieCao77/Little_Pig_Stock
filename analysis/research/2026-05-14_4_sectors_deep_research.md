@@ -1,466 +1,314 @@
-# AI 时代下四大主题板块深度研究：核能 / 机器人 / 无人机 / 军工
+# AI 时代下四大主题板块深度研究 v2:核能 / 机器人 / 无人机 / 军工
 
-**编制日期**：2026-05-14
-**编制对象**：Kejing Yan ($6.9k Robinhood + IBKR)
-**性质**：行业地图 + 评估框架,不是买卖建议
-**重要说明**：这份不是"买入清单",是"如果你想要敞口,该看哪些点"的研究底稿。结尾会回到你 2026-05-13 的执行清单和 sleeve 结构,讨论"加这些会让组合好还是更差"。
-
----
-
-## 写在开头：方法论 + 数据可靠性声明
-
-**我的数据限制**:
-1. **知识截止 2026-01**:行业结构、价值链、长期驱动、主要风险这些"稳"的内容可靠;但 2026-02 之后的具体新闻、政策、财报、最新报价我没有。
-2. **新闻 MCP 今天故障**:repo 挂的 Macrotrends Newswires 5/14 全部返回 `HTTPStatusError`,所以这份研究**不能拿来作为"今天某只票多少钱"的依据**——你看完任何一个名字,**必须**自己去 TradingView 或券商 app 看当前价、当前 P/E、最近一次财报趋势。
-3. **"在低点"是个用户输入的前提**——下面**每个板块第一节都会先核实这个前提**,不会默认接受。
-
-**我用的评估框架**(就是 repo 里 2026-05-12 那篇用 COHR 走过的 6 步清单):
-① 业务讲得清楚吗 / ② 耐用 vs 动量 / ③ 估值 sanity / ④ 是否共识 / ⑤ 什么时候买 / ⑥ Sizing。
+**编制日期**:2026-05-14(基于 WebSearch 拉到的 5/13-5/14 实时数据,**修订自 v1 的"知识截止 2026-01"版本**)
+**编制对象**:Kejing Yan ($6.9k Robinhood + IBKR 待补)
+**性质**:行业地图 + 评估框架,**不是买卖建议**
+**重要说明**:这份基于 2026-05-13 / 14 的实时新闻和报价(来源见文末);股价波动,做决策前**再查一次最新**。
 
 ---
 
-## 一、跨板块共性观察(前提核查)
+## 写在开头:v1 → v2 关键修订声明
 
-用户的开头叙述是:"**核能 机器人 无人机 军工,这四个板块还处于低点会被拉起来**"。先把这句话拆开核实:
+**这份和 v1 的关键区别**:v1 主要用了我的 2026-01 知识截止,导致"在低点"的判断很多是过期数据。**v2 用 WebSearch 拉了 5/13-5/14 的真实数据** —— 结果**多处推翻了 v1 的结论**,尤其:
 
-| 板块 | "在低点"是否成立 | 备注 |
+| v1 判断 | v2 实际数据 | v1 对错 |
 |---|---|---|
-| 核能 | **部分成立**:铀(CCJ/UEC/URA)2024-25 涨完回调,处于"相对中位偏低";但大盘核电运营商(CEG、VST)2024-25 涨了 ~2-3 倍,**完全不在低点** | 看 sub-sector |
-| 机器人 | **较成立**:机器人 ETF(BOTZ/ROBO)长期跑输 SPY/QQQ,humanoid 概念上市公司少;**相对 AI/半导体在低位** | 但"被拉起来"的催化是 2027-28 humanoid 量产,远 |
-| 无人机 | **分化**:大盘 defense drone(AVAV/KTOS)2025 后半段回落,部分回到 2024 低点;小盘(RCAT 等)从 SPAC 高点跌 -70%。**有相对低点**;但国防 ETF(ITA/XAR)创新高 | 看是哪只 |
-| 军工 | **基本不成立**:大盘传统军工 LMT/RTX/NOC/GD 全在历史高位附近;国防 ETF(ITA/XAR)创新高 | 只有特定回调过的中小盘可能"低位" |
+| "LMT/RTX/NOC 全部历史高位附近" | **LMT $521,52w 范围 $410-$692,实际 -25% from 52w 高** | ❌ v1 错了 — 军工大盘是真回调 |
+| "SMR/OKLO/NNE 投机仓位" | **SMR(NuScale)崩到 $12 / 52w -79%** | ⚠️ 方向对但严重性 v1 没说 |
+| "CCJ 中性" | **CCJ $115.69,+150% YoY** | ❌ v1 低估了热度 |
+| "CEG 已涨" | **CEG $274.89 +300% 3y,但 5/13 单日 -6.37%** | ⚠️ v1 没看到裂痕 |
 
-→ **"四大板块齐齐在低点要被拉起来"这个 framing 是 narrative,不是 fact**。逐 sector / 逐 ticker case-by-case 才对。
-
-**第二个跨板块观察(更重要)**:这 4 个板块**有 3 个是 AI 主题的衍生**——
-- 核能 ← AI 数据中心用电激增(2024 起最强 narrative driver)
-- 机器人 ← AI 大模型让"具身智能"看起来可行
-- 无人机+军工(部分)← AI 自主武器 + 地缘紧张
-
-含义:**如果 AI capex 减速,这 4 个会同时受损**。它们不是 4 个独立板块,而是**一种主题的 4 个侧面**。把它们当"4 个分散仓"去配置,是**伪装的集中**——这是对一个"想用主题分散降风险"的散户最危险的认知陷阱。
+**评估框架**(同 v1):6 步清单 = 业务讲得清 / 耐用 vs 动量 / 估值 sanity / 是否共识 / 何时买 / Sizing。
 
 ---
 
-## 二、核能 Nuclear
+## 一、跨板块共性观察(用真实数据重做前提核查)
 
-### 1. 前提核查："在低点"吗?
+用户原始命题:"**核能 机器人 无人机 军工 四板块还处于低点会被拉起来**"。逐个核实:
 
-| 子板块 | 2024-2025 行情 | 当前位置 |
+| 板块 | 5/13-5/14 关键报价 | "在低点"成立吗 |
 |---|---|---|
-| 大型核电运营(CEG / VST) | 从 ~$100 涨到 ~$300+(2-3 倍) | **历史高位附近,不便宜** |
-| SMR 概念(SMR / OKLO / NNE) | SPAC/IPO 后大涨,2025 大幅回调 | "相对低点",但波动极大、无盈利 |
-| 铀矿(CCJ / UEC / UUUU / DNN) | 2023-24 涨,2025 回调 | 铀现货从 $100 高点回到 ~$70-80,中性 |
-| 铀浓缩 / 燃料(LEU / BWXT) | LEU 波动巨大;BWXT 稳健成长 | LEU 中位,BWXT 高位 |
-| 主题 ETF(URA / NLR / URNM) | 涨过又回调 | 中位 |
+| 核能 | CCJ $115.69(+150% YoY)/ CEG $274.89(+300% 3y,-6.37% 5/13)/ VST $142.45 / BWXT $206.83 / OKLO $69.64 / **SMR(NuScale)$12.00(52w $8.85-$57.42,-79% from 高)** / URNM $64.99(52w $35.93-$84.95)/ 铀现货 ~$86(从 1 月 $101 高回落)| **混合**:运营商/Cameco 高位;铀现货+URNM 中位偏下;**SMR 类崩盘** — "低点"只对 SMR/NuScale 类成立 |
+| 机器人 | BOTZ $40.72($3.76B AUM)/ **SYM(Symbotic)+167% YoY** | **不成立**:Symbotic 一年涨 167%;BOTZ 价位也不算低 |
+| 无人机 | **AVAV $168.86**($8.31B 市值)/ **KTOS $57.33**($10.75B 市值)/ **RCAT $9.43**(YTD +58% 但增发暴跌)/ AVAV+KTOS+DPRO **YTD -9~-12%** | **部分成立**:AVAV/KTOS 年内回调 ~10%,绝对位置不低但**有回调** |
+| 军工 | **LMT $521(52w $410-$692,-25% from 高)** / XAR $265.80(P/E 67.82,$5.97B AUM)/ ITA $222.74 | **比 v1 更成立**:**LMT 是真回调** — v1 错说"在历史高位",更正 |
 
-→ "核能在低点"**对铀部分勉强成立、对大型运营商完全不对、对 SMR 看时间窗口**。**用户的 framing 不准确**。
+→ **重要修正**:用户"4 板块在低点"对**军工 LMT 部分实际成立**,v1 我搞错了。但**对 CCJ/CEG/SYM 仍不成立**(这几个还在涨)。
 
-### 2. 行业结构 + 价值链
+**跨板块第二个观察**(仍然成立):这 4 个里 3 个是 **AI / 地缘衍生**(核能 ← AI 用电 / 机器人 ← AI 具身 / 无人机+军工 ← AI 武器 + 地缘紧张)。底层是**同一类宏观叙事**(AI capex + 地缘永续)。如果这两个 narrative 任一减速,4 个板块**同时受损**。"加 4 个 = 分散"是错觉。
 
-```
-[铀矿] → [转换/浓缩] → [燃料组件] → [反应堆运行] → [发电+输电] → [电网用户]
-  CCJ      LEU/UEC     BWXT/Westinghouse  CEG/VST/DUK    公用事业       AI 数据中心(新)
-  UEC      Centrus
-  Kazatomprom(哈)              [新建:SMR — NuScale/Oklo/BWXT/X-energy/TerraPower]
-```
+---
 
-**横向因素**:NRC(美核监管)、DOE(能源部贷款担保)、IRA(产业政策)、政府执行令。
+## 二、核能 Nuclear(实时数据驱动)
 
-### 3. 主要驱动(Bull case)
+### 1. 前提核查(更新)
 
-| # | 驱动 | 强度 |
-|---|---|---|
-| 1 | **AI 数据中心电力需求**:Hyperscaler 直接和核电签 PPA(微软-三里岛 2024、亚马逊-Talen、Meta-Constellation) | **当前最大单一 driver** |
-| 2 | 政策利好:Three Mile Island 重启、Diablo Canyon 延寿、Trump 二期对核电友好 | 强 |
-| 3 | 长期电力短缺:AI+EV+制造业回流 → 美电力需求十年首次重新增长 | 中长期强 |
-| 4 | SMR 商业化时间表:2028-2030 首批上线(NuScale CFPP 取消过,Oklo 目标 2027) | 中,但有滑窗风险 |
-| 5 | 铀供需缺口:Cameco/Kazatomprom 减产 + 俄罗斯铀禁令 + 新产能慢 | 中 |
-| 6 | DOE Loan Programs Office(LPO)对 SMR 提供贷款担保 | 中 |
+- **URNM 5/10 报价 $64.99**,52 周范围 $35.93-$84.95 → **中位偏下** ✓("低点"勉强成立)
+- **铀现货 ~$86/lb**,但 2026 年 1 月底曾摸 **$101.41/lb** 后回落 → 已不在低点,但远低于 2007 年 $137 历史高
+- **BAML 预测铀价 2027 到 $135/lb**
+- **新事件 5/6**:**NANO Nuclear (NNE) + Supermicro 签 MOU**,合作为 AI 数据中心供电
+- **OKLO 进展**:被 DOE Reactor Pilot Program 选中,用于 Pluto 反应堆钚燃料材料工作
+- **SMR (NuScale) 警告**:股价从 52w 高 $57.42 崩到 $12.00(**-79%**)— 业绩失望、亏损扩大、收入预期下调
 
-### 4. 主要风险(Bear case)
+### 2. 关键名字 + 最新报价(美股可买)
 
-| # | 风险 | 严重程度 |
-|---|---|---|
-| 1 | **AI capex 放缓 → PPA 议价能力下降 → 公用事业估值重估** | **高** |
-| 2 | SMR 建设延期 / 监管阻力 / 成本超支(NuScale CFPP 已取消过一次) | 高 |
-| 3 | 铀价格周期性回落(铀矿股直接挂钩) | 中 |
-| 4 | 利率上行 → 重资本核电估值压缩 | 中 |
-| 5 | 安全事故 / 政治风向变(德国式弃核重演) | 低概率但高 impact |
-| 6 | **估值 mean reversion**:CEG/VST 已从 P/E 15 涨到 30+,任何放缓都击穿 | **高** |
-| 7 | "数据中心用核电"的实际部署比 PR 慢得多(三里岛重启 ~2028 才并网) | 中 |
-
-### 5. 美股可买名单
-
-| 类别 | 标的 | 业务 | 主要特征 |
+| 类别 | 标的 | 5/13 报价 | 关键数据 / 最新进展 |
 |---|---|---|---|
-| 大型核电运营 | **CEG**(Constellation) | 美国最大核电运营商,核电资产占比最高 | 已大涨,P/E ~30x;质量高但贵 |
-| 大型电力(含核) | **VST**(Vistra) | 德州 + 核电 + 储能 | 已大涨,周期性强 |
-| SMR 概念 | SMR(NuScale) | 模块化反应堆设计 | 无盈利,商业化反复 |
-| SMR 概念 | OKLO | Sam Altman 支持 | 无盈利,纯故事 |
-| SMR 概念 | NNE(Nano Nuclear) | 微型反应堆 | 微盘高波动 |
-| SMR/海军 | **BWXT** | 海军反应堆 + 医用同位素 + SMR 燃料 | 较稳健,P/E ~25x |
-| 铀矿 | **CCJ**(Cameco) | 加拿大铀矿龙头 + 哈萨克 JV | 周期性,P/E ~20-25x 看铀价 |
-| 铀矿 | UEC、UUUU、DNN | 美/加铀矿小盘 | 小盘高波动 |
-| 铀浓缩 | LEU(Centrus) | HALEU 浓缩(SMR 燃料) | 高波动,故事+实质 |
-| **ETF** | **URA** | 一篮子全球铀矿 | 降低单股风险,首选敞口工具 |
-| **ETF** | **URNM** | 类似 URA,稍纯 | 等价选择 |
-| **ETF** | **NLR** | 核电主题 ETF(运营+服务+矿) | 综合敞口 |
+| 大型核电运营 | **CEG**(Constellation)| **$274.89**(-6.37% 当日)| +300% 3 年;Q1 2026 EPS beat +5%、营收 beat +28% |
+| 大型电力(含核) | **VST**(Vistra)| **$142.45** | Q1 2026 强劲,AI/数据中心拓展 |
+| 海军核 + 燃料 | **BWXT** | **$206.83** | **新获 $1.4B 海军核动力推进合同** |
+| 铀矿龙头 | **CCJ**(Cameco)| **$115.69** | **+150% YoY**;Q1 2026 EPS $0.34 beat 30% |
+| 小盘 SMR | **OKLO** | **$69.64** | 17 位分析师 Buy;价格目标 $101.79;被 DOE 选中 |
+| 小盘 SMR | **SMR**(NuScale)| **$12.00** | **52w $8.85-$57.42,-79% from 高**;业绩差、诉讼、合作风险;1y 目标 $16.50 |
+| 微型 SMR | **NNE**(NANO Nuclear)| (查最新)| 5/6 和 Supermicro 签 AI 数据中心 MOU |
+| 铀矿 ETF | **URNM**(Sprott)| **$64.99** | 52w $35.93-$84.95;~80% 全球铀矿股 |
+| 铀矿 ETF | URA | (查最新)| 类似 URNM,更广基础 |
+| 核电主题 ETF | NLR | (查最新)| 运营商+服务+矿综合 |
 
-### 6. 估值现实
+### 3. v1 → v2 关键修正
 
-- CEG / VST forward P/E ~28-32x — **不便宜**,大部分增长已 price in。任何 AI 数据中心 capex 放缓都打击它们。
-- OKLO / SMR / NNE 无盈利,EV/Sales 极高 — 纯故事股,适合赌场不适合长期。
-- CCJ forward P/E ~20-25x — 中性,但**强周期**,跟铀价。
-- BWXT P/E ~25-28x — 增长稳健,**估值合理但不便宜**。
-- URA / NLR P/E 难算(ETF),但持仓加权后大约 20-25x。
-- → "核能板块还在低点"对**估值最高的 CEG/VST 完全不成立**,对**铀部分有点道理**,对**SMR 你买的是期权**。
+- **SMR (NuScale)**:v1 仅评"投机";v2 明确告诉你**已崩 -79%、业绩差** — 别接飞刀
+- **CEG / VST**:v1 说"已大涨";v2 数据支持(CEG +300% 3y,**5/13 单日 -6.37% 是高位裂痕信号**)
+- **BWXT**:v1 评"较稳";v2 数据更好(新签 $1.4B 海军合同)— **核能桶里最稳的单股选择**
+- **OKLO**:v1 评"无盈利、纯故事";v2 部分升级 — 被 DOE 选中是真里程碑,17 个分析师 Buy 目标 $101.79(vs 当前 $69.64 = +46% upside),但**仍是赌场仓位**
+- **NNE**:v1 没列;v2 新增 — Supermicro MOU 是实质事件,值得跟踪
 
-### 7. 对**你**的实操含义
+### 4. 对你的实操含义
 
-- **不要 sector-wide bet,要选 sub-sector**。
-- 想要**最稳的核能敞口**:**URA 或 NLR ETF**,降低单股风险。
-- 想要**单股**:**BWXT**(海军核 + 医用,业务多元、估值合理)或 **CCJ**(铀龙头,周期性 ok)。
-- **不要碰**:OKLO / SMR / NNE — 这些是 ≤2% NAV 赌场仓的位置,不是"长期持仓"。
-- CEG/VST 是好公司但**价格已经吃掉了大部分故事**;现在追 = 接盘。
-- Sizing 上限:**整个核能桶 ≤ 8% NAV**(对你 = ~$550)。
+- 想要分散敞口 → **URNM ETF($65)**;比单股稳
+- 想要单股质量 → **BWXT($207)**,新签 $1.4B 海军合同,业务多元
+- **CCJ +150% YoY,追高需谨慎**
+- **CEG 5/13 单日跌 -6.37%**,说明大故事有裂痕 — 想买的话 ETF 是更好选择
+- **绝对不要追 SMR (NuScale)** — -79% 是有原因的;再"看似便宜"也是价值陷阱
+- Sizing 上限:核能桶 ≤ 8% NAV(对你 ~$550)
 
 ---
 
-## 三、机器人 Robotics
+## 三、机器人 Robotics(实时数据驱动)
 
-### 1. 前提核查:"在低点"吗?
+### 1. 前提核查(更新)
 
-| 子板块 | 2024-2025 行情 | 当前位置 |
-|---|---|---|
-| 工业自动化(ROK / EMR) | 表现平淡 | 接近"相对低位" |
-| Humanoid 主线(TSLA Optimus / Figure-未上市) | TSLA 高波动 | TSLA 不算低 |
-| 仓储机器人(SYM) | 2024 大涨,2025 回调 | 中位 |
-| 机器人 ETF(BOTZ / ROBO / IRBO) | **长期跑输 SPY/QQQ**,过去 3 年跑输 30%+ | **确实在相对低位** |
+- **BOTZ 5/13 报价 $40.72,NAV $40.74,$3.76B AUM** — **重仓 NVDA**,本质是 AI 主题代理
+- **SYM(Symbotic)过去 1 年 +167%** — **完全不在低点**;Walmart 2025/1 续约,Q3 营收 +26% YoY
+- **ROK(Rockwell)Q1 2026 智能设备** $1B 营收,+13% YoY — 稳健
+- **Tesla Optimus 重大进展**:
+  - 2026 年 Tesla 停产 Model S/X 把 **Fremont 工厂改造为 Optimus 生产基地**
+  - Optimus V3 原型 **Q1 2026 发布**;目标 **2026 年底实现 1M/年 产能**
+  - 计划 **2027 年底开始对公众销售**
+  - 3 月 2026 展示 Optimus 自主电池单元分拣
+- **Figure AI**:已在 BMW 工厂(2024/12)+ UPS 部署;**短期不会 IPO**
 
-→ **"机器人在低点"比核能成立得多**,尤其相对 AI 主题。但"低"是因为它**没跟上 AI 行情**,不是因为基本面崩盘。
+### 2. 关键名字 + 最新报价(美股可买)
 
-### 2. 行业结构 + 价值链
-
-```
-[关键零部件] → [本体厂] → [软件/算法] → [应用]
- 伺服电机          工业:Fanuc/ABB/Yaskawa(日/欧)
- 减速器(谐波/RV)   仓储:Symbotic/Geek+
- 传感器(力/视觉)   humanoid:Tesla/Figure/1X/Apptronik(美)、Unitree/小鹏(中)
- 芯片(NVDA Jetson) 服务机器人:多家小盘
- 电池              
-                              VLA 模型、仿真平台(NVDA Cosmos)、运动控制
-```
-
-### 3. 主要驱动
-
-| # | 驱动 |
-|---|---|
-| 1 | **AI 大模型让"具身智能"从科幻变成可能**(LLM 给 robot 一个"大脑") |
-| 2 | 美/中/日劳动力短缺 + 工资上升 |
-| 3 | 制造业回流需要自动化 |
-| 4 | BOM cost-down:目标 humanoid 从 $50K 降到 $20K 以下 |
-| 5 | NVDA Cosmos / Isaac 等仿真平台缩短训练时间 |
-| 6 | 2026-2028 humanoid 量产时间表(各家口径不一,常滑窗) |
-| 7 | Tesla Optimus 量产计划(马斯克目标 2026 数千台 → 长期数百万) |
-
-### 4. 主要风险
-
-| # | 风险 | 严重程度 |
-|---|---|---|
-| 1 | **量产时间反复推迟**(Tesla / Figure 多次滑窗) | **高** |
-| 2 | **单位经济不通**:BOM 太贵客户不付,补贴又持续不了 | 高 |
-| 3 | 软件 reliability:robot 自主决策仍有大量失败 | 高 |
-| 4 | 监管/安全/责任不清晰(robot 出事谁负责) | 中 |
-| 5 | **估值已经 price in 多年成功**(TSLA 估值含 Optimus 期权) | 高 |
-| 6 | **美国本土纯 humanoid 上市公司极少**;BOTZ 含很多日本厂(汇率 + 流动性风险) | 中 |
-| 7 | 中国 humanoid(Unitree、宇树)价格屠夫风险 — DeepSeek 在 LLM 干过的事在硬件上可能重演 | 中 |
-
-### 5. 美股可买名单
-
-| 类别 | 标的 | 业务 | 主要特征 |
+| 类别 | 标的 | 5/13 报价 | 关键数据 |
 |---|---|---|---|
-| Humanoid 主线 | TSLA(已不少敞口) | Optimus 是部分故事 | 大部分价值是电车;Optimus 是期权 |
-| 仓储机器人 | **SYM**(Symbotic) | Walmart/SoftBank 仓储 | 客户高度集中,高波动 |
-| Lidar / 传感器 | OUST(Ouster) | 机器人/汽车视觉 | 高波动,无盈利 |
-| 工业自动化 | **ROK**(Rockwell Automation) | 美国 PLC / 工厂自动化龙头 | 稳健,不依赖 humanoid hype |
-| 工业自动化 | EMR(Emerson) | 工业过程自动化 | 稳健,分红 |
-| 工业自动化 ADR | FANUY(日 Fanuc ADR)、ABB | 全球工业机器人巨头 | OTC ADR,流动性差 |
-| 半导体 picks-and-shovels | NVDA(已持有 1 股) | Cosmos + 推理 + Jetson | 不是纯机器人,但是 picks-and-shovels |
-| **ETF** | **BOTZ**(Global X Robotics) | 全球机器人主题 | 含日本/欧洲名字,长期跑输 QQQ |
-| **ETF** | ROBO | 类似 BOTZ | 差异不大 |
-| 高度投机 | 各种 robotics SPAC 小盘 | 不建议 | — |
+| Humanoid 主线代理 | **TSLA** | (查最新)| Optimus 量产 2026 H2 目标,Fremont 全产线转换 |
+| 仓储机器人 | **SYM**(Symbotic)| (查最新)| **+167% YoY**;Walmart 续约,Q3 +26% YoY |
+| 工业自动化 | **ROK**(Rockwell)| (查最新)| Q1 2026 智能设备 $1B +13% |
+| 工业自动化 | EMR(Emerson)| (查最新)| 稳健、分红 |
+| 半导体 picks-and-shovels | NVDA(你已有 1 股)| ~$230(已涨)| Cosmos + Jetson 是 humanoid 推理大脑 |
+| 主题 ETF | **BOTZ** | **$40.72** | $3.76B AUM,**重仓 NVDA + 工业自动化** |
+| 主题 ETF | ROBT(First Trust)| (查)| 替代 BOTZ |
+| 主题 ETF | ARKQ(ARK Autonomous)| (查)| Cathie Wood 主动管理 |
+| 私营巨头 | Figure AI | 未上市 | BMW + UPS 客户,不会近期 IPO |
 
-### 6. 估值现实
+### 3. v1 → v2 关键修正
 
-- **BOTZ / ROBO 长期跑输 SPY/QQQ**:过去 3 年跑输累计 ~25-35%。这个差距是机会还是警告?**两面都说得通**——"跑输 = 估值便宜,机会"或"跑输 = humanoid 经济性还没出来,继续等"。
-- ROK / EMR:P/E ~25-28x,**估值不便宜但增长稳**。
-- SYM:高 P/S(~8-10x),客户集中度风险大。
-- TSLA:估值含巨大 Optimus 期权;Optimus 不及预期是已知风险点。
-- 纯 humanoid pureplay 美股几乎没有 — 大部分价值会被 Tesla 或 NVDA 内化。
+- **Tesla Optimus 比 v1 描述更激进**:Fremont 全转产 Optimus 是 v1 没有的实质信息;**2026 年底 1M 年产能目标已正式宣布,占用主力工厂**(虽然 Musk timeline 历来滑窗,但工厂转换是真实动作)
+- **SYM +167% YoY** 直接证伪"机器人在低点"(对 Symbotic)
+- **BOTZ 重仓 NVDA** 含义:它本质是 AI 主题代理,**不是"humanoid pureplay"** — 你买 BOTZ 等于又加 NVDA 暴露
 
-### 7. 对**你**的实操含义
+### 4. 对你的实操含义
 
-- 如果只想要主题敞口:**BOTZ ETF 是最稳的方式**;但要接受"过去 3 年跑输,可能未来也继续跑输"。
-- 单股做长线:**ROK / EMR**(美国工业自动化龙头,不靠 humanoid hype)是相对稳的选择。
-- **已有 NVDA(机器人 AI 的 picks-and-shovels)是间接敞口** — 你已经有了。
-- humanoid 真要爆发要 2027-2028+ — 这是 long-duration bet,要能接受持有过程没动作。
-- Sizing 上限:**机器人桶 ≤ 5-8% NAV**(对你 = $350-550)。题材确定但时机未到。
+- 想要 humanoid 长线 → 你**已经有 NVDA**(picks-and-shovels)+ 间接通过 QQQ 含 TSLA
+- BOTZ 适合"主题敞口",但本质是 AI ETF — 别以为是分散
+- SYM 涨幅已惊人,追高风险大
+- **ROK 是最稳的"工业自动化不靠 humanoid hype"选择**
+- Tesla Optimus 是真故事,**但通过 TSLA 买的人是买"电车 + Optimus 期权"**,不是纯 humanoid
+- Sizing 上限:机器人桶 ≤ 5-8% NAV($350-550)
 
 ---
 
-## 四、无人机 Drones
+## 四、无人机 Drones(实时数据驱动)
 
-### 1. 前提核查:"在低点"吗?
+### 1. 前提核查(更新)
 
-| 子板块 | 2024-2025 行情 | 当前位置 |
-|---|---|---|
-| 大盘 defense drone(AVAV / KTOS) | 2024 涨、2025 后半段回落 | **部分回到 2024 低点附近,有"相对低点"特征** |
-| 小盘 drone(RCAT / UMAC / AIRO) | SPAC 后大涨,2025 大跌 -70% | "看似低",但很多是估值正常化 |
-| 国防 ETF(ITA / PPA / XAR) | 创历史新高 | **完全不在低点** |
-| 反无人机 | 私营为主(Anduril 等) | — |
+- **AVAV $168.86,市值 $8.31B**;FY25 营收 $821M(+14.5% YoY),**$1.1B 资金 backlog**
+- **KTOS $57.33,市值 $10.75B**;2025 年营收 $1.35B(+18.5%),Q4 organic +12.1%
+- **RCAT $9.43,市值 $1.15B**;YTD +58% **但**近期"discount 公开增发"导致股价暴跌
+- **AVAV / KTOS / DPRO YTD 跌 9-12%** ✓ 验证"已回调"
+- **AVAV Switchblade 600** 被 Pentagon 公开确认是 **Replicator 项目**组成部分
+- **RCAT 中标**:U.S. Army Short Range Reconnaissance(SRR)程序 + Palantir 合作 GPS-denied 导航 + Blue Ops USV(海上无人船)
 
-→ "无人机在低点"对**纯无人机小盘股**有点道理;对**国防 ETF 不成立**。
+### 2. 关键名字 + 最新报价(美股可买)
 
-### 2. 行业结构 + 价值链
-
-```
-[组件] → [平台] → [软件] → [客户]
- 摄像头/光电   AVAV(Switchblade、Puma)        飞控    DoD/Replicator
- 传感器/雷达   KTOS(Valkyrie、Mako)           AI 推理 海关/CBP
- 通信(LTE/卫星) Red Cat、Anduril-私、Skydio-私  自主导航 州警/消防/SAR
- 电池/推进                                              商用:测绘/农业/电力巡检
- AI 推理芯片(NVDA Jetson)
-```
-
-### 3. 主要驱动
-
-| # | 驱动 |
-|---|---|
-| 1 | **乌克兰战争 + 红海 + 以色列** 实战证明无人机有效 |
-| 2 | **DoD Replicator 计划**:2 年要部署"数千个低成本自主系统"(2024 启动) |
-| 3 | **Loitering munitions**(Switchblade)需求飙升 — 乌克兰消耗了美军大量库存 |
-| 4 | Naval drone(USV)成新战域 |
-| 5 | **中美脱钩 + DJI 限制** — 给美国本土厂"forced switchover"窗口 |
-| 6 | "Golden Dome"(Trump 导弹防御)— 部分含无人机/反无人机 |
-| 7 | 美对无人机产业本土化的国家安全推动 |
-
-### 4. 主要风险
-
-| # | 风险 | 严重程度 |
-|---|---|---|
-| 1 | **国防订单 lumpy**(一次性、慢、政治化、延期) | **高** |
-| 2 | 小盘 drone 大多无盈利,纯 narrative | 高 |
-| 3 | **DJI 解禁**(国家安全担忧若缓和)— 立刻碾压本土小盘 | 中 |
-| 4 | **Anduril 等私营巨头**吃掉大部分 Replicator(startup 化的内部竞争) | 中 |
-| 5 | **估值已 price in 战争永续** — 乌克兰停火/中东缓和都是负面 | **高** |
-| 6 | "Golden Dome" 落地速度可能慢得多于股价 price in 的速度 | 中 |
-
-### 5. 美股可买名单
-
-| 类别 | 标的 | 业务 | 主要特征 |
+| 类别 | 标的 | 5/13 报价 | 关键数据 |
 |---|---|---|---|
-| 大盘 defense drone | **AVAV**(AeroVironment) | Switchblade、Puma、Jump 20 | 中盘(~$5B 市值),核心持仓首选 |
-| 大盘 defense drone | **KTOS**(Kratos) | Valkyrie 无人战机、Mako、导弹 | 中盘,稍便宜 |
-| 小盘 drone | RCAT(Red Cat) | 军用小型无人机(Black Widow) | 微盘,高波动,DoD SRR 项目 |
-| 小盘 drone | UMAC、AIRO、IDEX | SPAC 后小盘 | **不建议**,流动性差 |
-| 国防大盘(含 drone) | LMT / NOC / GD | 国防巨头,drone 是小部分 | 慢稳健,不是 drone pureplay |
-| 数据/软件 | PLTR | 国防 AI/数据平台(USPACOM、Replicator 软件层) | **P/E 离谱**(150x+) |
-| 国防 ETF | **XAR / ITA** | 一篮子航空国防 | 含 drone 占比小 |
-| 纯无人机 ETF | UVIX 等几乎不存在 | — | 没好的纯 drone ETF |
+| 大盘 defense drone | **AVAV** | **$168.86** | 市值 $8.31B,FY25 $821M (+14.5%),$1.1B backlog,Switchblade 在 Replicator |
+| 大盘 defense drone | **KTOS** | **$57.33** | 市值 $10.75B,2025 $1.35B (+18.5%) |
+| 小盘 drone | **RCAT** | **$9.43** | 市值 $1.15B,中标陆军 SRR + Palantir 合作;**最近增发暴跌** |
+| 小盘 drone | ONDS、DPRO、UMAC、AIRO | (查)| 微盘高波动,不建议 |
+| 国防大盘(含 drone)| LMT/NOC/GD | 见军工节 | drone 是小部分 |
+| AI in defense | PLTR | (查;P/E 通常 150x+)| Maven、Replicator 软件层 |
+| 国防 ETF(含 drone)| XAR / ITA | 见军工节 | drone 含量小 |
+| 私营巨头 | **Anduril** | **IPO 候选**(尚未上市)| 吃掉大量 Replicator 单 + Golden Dome SBI 中标 |
 
-### 6. 估值现实
+### 3. v1 → v2 关键修正
 
-- AVAV forward P/E ~50x,KTOS 类似 — **已经被定价为"战时受益股"**。不是低估值股。
-- RCAT 类小盘:无盈利,EV/Sales 极高 — 纯期权。
-- LMT / NOC P/E ~18-22x — 合理但已近历史高位。
-- PLTR P/E 150x+ — 完全脱离传统估值,是"AI+国防双概念"的极端定价。
+- **AVAV 市值 $8.31B,KTOS $10.75B** — 已经是**中大盘**,不是 v1 暗示的"小盘 punt";流动性 ok
+- **RCAT 增发暴跌** = v1 没有的关键信息:小盘 drone 的 dilution 风险**已经证实**
+- **Anduril IPO 候选** — 上市后会**直接抢 AVAV/KTOS 估值**(行业新入者效应)
+- **AVAV Switchblade 在 Replicator 已确认** — 实质订单,不是 PPT
 
-### 7. 对**你**的实操含义
+### 4. 对你的实操含义
 
-- **AVAV 是相对最有道理的"敞口"票**,但 P/E 50x 不便宜 — 是"看好长期 + 接受短期波动"的 bet。
-- 小盘 drone(RCAT 等)纯赌场仓位,**单仓 ≤ 2% NAV**($140 max)。
-- 国防 ETF(XAR / ITA)是更稳的方式 — 但它含很多 drone 之外的东西。
-- **重要相关性警告**:你之前持有过 ASTS(已卖)是 "Golden Dome" 主题;再加 drone 又是相同主题暴露 — **不是分散**。
-- Sizing 上限:**无人机桶 ≤ 5% NAV**(对你 = ~$350)。
+- 想要 defense drone 敞口 → **AVAV($169)是最稳的选择**(中大盘,$1.1B backlog 实质)
+- **不要碰** RCAT / ONDS 等微盘 — 增发风险已经证实
+- **关注 Anduril IPO** — 一旦上市会重置整个板块估值
+- Sizing 上限:无人机桶 ≤ 5% NAV(对你 ~$350);AVAV 单股 ≤ 8-10% NAV
 
 ---
 
-## 五、军工 / 国防 Defense
+## 五、军工 / 国防 Defense(实时数据驱动 — v1 错最多的一节)
 
-### 1. 前提核查:"在低点"吗?
+### 1. 前提核查(**这一节 v1 错得最多,大幅修正**)
 
-| 子板块 | 当前位置 |
-|---|---|
-| 国防巨头(LMT / RTX / NOC / GD / HII) | **全部在历史高位附近** — **完全不在低点** |
-| 中盘国防(LDOS / BAH / HEI / TDG) | 大部分高位 |
-| 新型 defense tech(PLTR / AVAV / KTOS) | 分化,见上节 |
-| 国防 ETF(ITA / XAR / PPA) | **创新高** |
+**v1 我说"国防巨头全部在历史高位附近"** — **错**。真实数据:
 
-→ "军工在低点"**对大盘传统军工完全不对**,只对"特定回调过的中小盘"成立。**用户的 framing 对这个板块最不准**。
+- **LMT $521,52w 范围 $410-$692,当前 -25% from 52w 高** — 实际是**显著回调**
+- **XAR ETF $265.80**(P/E 67.82,AUM $5.97B)
+- **ITA $222.74**
 
-### 2. 行业结构 + 价值链
+→ **用户"军工在低点"对 LMT 实际成立**。v1 我搞错了。
 
-```
-[平台]              [组件]                  [软件/数据]     [服务]
- 战机:LMT/RTX/NOC   雷达/电子战:NOC/RTX     PLTR、BAH        LDOS、SAIC、BAH
- 导弹:RTX/LMT/NOC   推进:GE/RTX/RR(英)      Shield AI(私)    CACI
- 舰艇:GD/HII        弹药:NOC/General Dynamics OS              Booz Allen
- 卫星:LMT/NOC/MAXR  
- [新生代]:AVAV、KTOS、Anduril(私)、Hadrian(私)、Saronic(私)
-```
+### 2. Golden Dome — 行业最大单一催化(v1 提到但数据不够)
 
-### 3. 主要驱动
+**真实数据(2026 H1)**:
+- 特朗普 5/2026 正式宣布 **Golden Dome** 反导计划,Pentagon 估算 **$185B** 总成本
+- **CBO 5/12 反驳估算 $1.2T**(NPR / US News 报道)— **6.5x Pentagon 数字**
+- **FY26 国防总预算 $1.01T**(One Big Beautiful Bill Act 已拨 $150B,后续 $113B 待补)
+- **导弹防御预算 2020→2026 +247%**($11.6B → $40.2B)
+- **Space Force 过去几个月授出 20 份合同 $3.2B 给 12 家公司** 做 Space-Based Interceptors(SBI):**Anduril、Booz Allen、General Dynamics、GITAI、Lockheed Martin、Northrop Grumman、Quindar、Raytheon、SciTec(Firefly 子公司)、SpaceX、True Anomaly、Turion Space**
 
-| # | 驱动 |
-|---|---|
-| 1 | **全球国防预算上升周期**(NATO 2%→3% 目标、亚洲/日韩/台增加) |
-| 2 | **持续地缘冲突**(乌、中东、台海三战线) |
-| 3 | Trump 二期国防偏好:Golden Dome、海军扩张、本土制造 |
-| 4 | **AI/Software in defense**(PLTR、Anduril)— 估值高利润率高的新生代 |
-| 5 | 替换老化库存(乌克兰援助消耗了大量美军库存 — RTX/GD 受益) |
-| 6 | "Pacific Deterrence Initiative"(亚太军备) — HII 造船受益 |
-| 7 | 太空军备(SPACECOM)— LMT/NOC 卫星合同 |
+### 3. 关键名字 + 最新报价(美股可买)
 
-### 4. 主要风险
-
-| # | 风险 | 严重程度 |
-|---|---|---|
-| 1 | **政府预算政治化** — debt ceiling / continuing resolution | 中 |
-| 2 | 一次性合同 lumpy 性 | 中 |
-| 3 | **估值已 price in 多年好景气**(LMT/NOC P/E 历史高位) | **高** |
-| 4 | **和平 / 停火 narrative 风险**:Trump 倾向促谈(乌、中东) | **高** |
-| 5 | 大项目程序延期(F-35 / B-21 历来超期超支) | 中 |
-| 6 | 政治风向变(2028 选举之后) | 中 |
-| 7 | BA 持续质量危机 — 拖累 ITA 整体(国防块还行,商用块烂) | 中 |
-
-### 5. 美股可买名单
-
-| 类别 | 标的 | 业务 | 主要特征 |
+| 类别 | 标的 | 5/13 报价 | Golden Dome / 关键数据 |
 |---|---|---|---|
-| 国防一线 | **LMT** | F-35、导弹、Sikorsky | 慢、稳、分红 ~2.5% |
-| 国防一线 | **RTX** | 导弹、雷达、引擎(P&W) | 综合最大,股息稳 |
-| 国防一线 | **NOC** | B-21、电子战、卫星 | 较贵,B-21 是核心 |
-| 国防一线 | **GD** | 潜艇、坦克、Gulfstream | 多元、抗周期 |
-| 造船 | **HII**(Huntington Ingalls) | 海军造船(航母+核潜) | **Pacific Deterrence 主受益,相对不贵** |
-| 服务/数据 | LDOS、BAH、SAIC | 国防 IT/咨询/AI | 利润率高于硬件,稳健 |
-| AI 国防 | **PLTR** | 数据/AI 平台、USPACOM、Maven | **P/E 离谱(150x+)** — 谨慎 |
-| 无人机相关 | AVAV、KTOS | 已涵盖 | — |
-| **国防 ETF** | **ITA**(iShares) | 一篮子 | **含 BA**,被 BA 拖累过 |
-| **国防 ETF** | **XAR**(SPDR) | 等权重 | **不重 BA**,可能更优 |
-| **国防 ETF** | PPA(Invesco) | 类似 | 差异不大 |
+| 国防一线 | **LMT**(Lockheed)| **$521**(52w $410-$692)| Golden Dome **12 家中标厂之一**;PAC-3/MSE 245 枚订单;hypersonic $400M;forward P/E ~16 不算贵 |
+| 国防一线 | **RTX**(Raytheon)| (查)| Golden Dome 雷达 + 太空传感器($7.2B 配额核心)|
+| 国防一线 | **NOC**(Northrop)| (查)| B-21 Raider $4B+;Sentinel ICBM $4.1B R&D |
+| 国防一线 | **GD**(General Dynamics)| (查)| Golden Dome SBI 中标厂 |
+| 造船 | **HII**(Huntington Ingalls)| (查)| Pacific Deterrence 主受益 |
+| 服务/数据 | **LDOS / BAH / SAIC** | (查)| **BAH 是 Golden Dome SBI 中标厂** |
+| AI 国防 | **PLTR** | (查,P/E 极高)| Maven、Replicator 软件层 |
+| 国防 ETF | **XAR**(SPDR)| **$265.80**(P/E 67.82)| 等权,不重 BA |
+| 国防 ETF | **ITA**(iShares)| **$222.74** | 市值加权,含 BA |
+| 国防 ETF | PPA(Invesco)| (查)| 类似 |
 
-### 6. 估值现实
+### 4. v1 → v2 关键修正
 
-- LMT P/E ~20x,**历史高位附近**;FCF 稳定、回购+分红是 anchor。
-- NOC P/E ~22x — B-21 故事已 price in。
-- RTX P/E ~22x — 综合敞口最广。
-- HII P/E ~16-18x — **相对最被忽视的一线**(造船 capex 周期慢)。
-- PLTR P/E 150x+ — 几乎已脱离基本面,是 momentum 股。
-- ITA / XAR P/E ~22-25x — 不便宜但合理。
-- → "军工在低点"对**大盘完全不成立**;它们一直在创新高。
+- **LMT 我错估为"历史高位"**:实际 -25% from 52w 高,**这是真实回调**。如果想入场国防,LMT 当前点位比 v1 描述的更有 entry 价值
+- **Golden Dome 12 家中标厂名单**(LMT/RTX/NOC/GD/BAH/SpaceX 等)— v1 没列,这是 5/2026 内的实质事件
+- **$1.2T 估算 vs $185B 官方**:CBO 5/12 反驳是**重大新信号** — 项目可能更大,但政治阻力会来
+- **Anduril 是 Golden Dome 中标厂之一** — 它 IPO 候选的额外催化
 
-### 7. 对**你**的实操含义
+### 5. 对你的实操含义
 
-- 想要"稳"的敞口:**ITA 或 XAR ETF**(XAR 不含 BA 略优);或直接 **LMT / RTX 选一个**(分红 anchor)。
-- 想要"AI in defense":PLTR 已经被定价为 momentum 股,谨慎;更便宜的 LDOS / BAH。
-- **HII 是相对最被忽视的大盘** — 如果你想要"看似不那么贵"的国防股,HII 值得一看。
-- **主题重叠警告**:ASTS 主题(已卖)和军工有 Golden Dome 重叠 — 别认为加军工就是"分散"。
-- Sizing 上限:**军工桶 ≤ 8% NAV**(对你 = ~$550)。
-- **"在低点 + 要被拉起来"对大盘军工不成立** — 它们一直在创新高。要么追高,要么等回调,要么用 ETF 摊掉择时。
+- 想要"稳"敞口 → **XAR($266)或 ITA($223)** 是首选
+- 想要单股 → **LMT($521,52w $410-$692)pullback 价位相对合理**;FCF + 分红 anchor
+- 想要 Golden Dome 直接受益 → LMT / RTX / NOC / GD 都是 12 家中标之一
+- BWXT(核能) + LMT(军工)组合 = 同时覆盖"AI 用电"+"反导武器"两个大故事
+- Sizing 上限:军工桶 ≤ 8% NAV($550);单股 ≤ 10%
 
 ---
 
-## 六、综合实操结论
+## 六、综合实操结论(基于实时数据修订)
 
-### A. 跨板块整体判断
+### A. 跨板块整体判断(v1 → v2 修正)
 
-1. **4 个板块不全在低点**。逐 sector / 逐 ticker case-by-case 才对:
-   - 核能:大型运营商高位,铀中位,SMR 投机价位
-   - 机器人:相对低位(跑输 AI 主题)
-   - 无人机:分化(大盘有低点,ETF 创高)
-   - 军工:**完全不在低点,大盘全是历史高**
-2. **这 4 个里 3 个是 AI 主题衍生**(核能-AI 用电 / 机器人-具身 / 无人机+军工-AI 武器)。所以它们**对组合分散有限,同涨同跌风险大**。
-3. **你的组合已经 AI 严重超配**(CIEN+GRID+DTCR+QQQ+NVDA+ORCL+MU+SNDK+DRAM ETF 全相关)。再加这 4 个里任何一个,都让"所有票一起 -25%"(你的红线)更可能。
-4. **你 5/13 de-scatter 还没做完**(CIEN 17% 单仓、SNDK 没清、对冲 0、核心 ~15.5%)。**在没把卫星收敛、核心补到 30%+、对冲恢复之前,讨论"再加哪个新主题"是反方向操作**。
+1. **"4 个板块都在低点" — 实际只有部分成立**:
+   - 核能:CCJ/CEG 在历史高位,SMR 崩 -79%,URNM 中位 — **混合**
+   - 机器人:**SYM +167% YoY,完全不在低点**
+   - 无人机:**AVAV/KTOS YTD -9~-12% 是真回调**;RCAT 增发暴跌
+   - 军工:**LMT -25% from 52w 高是真回调** — v1 我错了,**用户判断比 v1 我更准**
+2. **3/4 板块仍是 AI/地缘衍生** — 加 4 个**不是分散,是同主题深化**
+3. **你的组合已 AI 严重超配** + **5/13 de-scatter 没完成**(CIEN 还在、对冲为 0、新加 QCOM/MRNA/ASTS)— 任何新主题加仓都是反方向
 
-### B. 如果(只是如果)真要建一个新主题敞口
+### B. 如果(只是如果)真要建一个新主题敞口:实时数据下的建议
 
-按"合理性 + 适合你"排序:
+| 优先 | 标的 | 5/13 价格 | 单仓上限 | 理由 |
+|---|---|---|---|---|
+| 1 | **LMT** | $521 | ≤5% NAV($350)= ~0.7 股 | **52w -25%**,Golden Dome 12 家中标厂,P/E ~16 fwd 不算贵 |
+| 2 | **XAR ETF** | $265.80 | ≤5% NAV | 等权国防,不重 BA;Golden Dome 一篮子受益 |
+| 3 | **AVAV** | $168.86 | ≤5% NAV($350)= ~2 股 | Switchblade 在 Replicator,$1.1B backlog,中大盘 |
+| 4 | **BWXT** | $206.83 | ≤4% NAV($275)= ~1.3 股 | $1.4B 海军核合同,核能桶最稳 |
+| 5 | **URNM ETF** | $64.99 | ≤4% NAV($275)= ~4 股 | 铀矿一篮子,降低单股风险 |
+| - | **总主题暴露上限合计** | | **≤ 15% NAV($1,050)** | 否则又是"卫星倒过来" |
 
-| 优先级 | 标的 | 建议 sizing | 理由 |
-|---|---|---|---|
-| 1 | **XAR 或 ITA(军工 ETF)** | ≤5% NAV($350) | 现金流实在,分散度好;但要接受估值已在高位 |
-| 2 | **URA 或 NLR(核能 ETF)** | ≤5% NAV($350) | 主题敞口分散;铀+运营+服务,降低单股风险 |
-| 3 | **BOTZ(机器人 ETF)** | ≤3-5% NAV($200-350) | 长期主题敞口,过去 3 年跑输是机会也是警告 |
-| 4 | AVAV(无人机单股) | ≤3% NAV($200) | P/E 50x 不便宜;只在 AI 主题熊市才买 |
-| **总暴露上限** | **新主题合计** | **≤ 15% NAV($1,000)** | 否则又变成"卫星 50%+ 倒过来"的组合 |
+**资金来源必须从砍现有相关 AI / CPO / 连接仓位来**,不从核心 SPY/QQQ 来。
 
-**资金来源必须是从现有 AI 仓位调换**,不是从核心(SPY/QQQ/GOOG)或对冲(GLD 还没买回)调换。
+### C. 5/13-5/14 实时新闻里给你的 alert
 
-### C. 对"4 板块都要起来"这个 framing 本身
+- **CEG 5/13 单日 -6.37%** = 大型核电运营商高位有裂痕
+- **SMR (NuScale) 崩到 $12 / 52w -79%** = SPAC 类 SMR **绝不接飞刀**
+- **Golden Dome CBO 估算 $1.2T vs Pentagon $185B** = 项目规模争议大、政治阻力来了
+- **RCAT 增发暴跌** = 小盘 drone 增发风险已证实
+- **Anduril 准备 IPO** = 上市后会重置国防 AI / drone 板块估值
+- **CCJ +150% YoY** = 铀龙头追高需谨慎
 
-这是一个**典型的"轮动 narrative"**:
-- 故事:AI 涨完了 → 资金"轮动"到核能(AI 衍生) → 机器人(下一个 AI) → 国防(地缘永续) → 无人机(战争永续)
-- **这个框架的问题**:它把"4 个相关的 AI 衍生主题"当成"分散的 4 个板块"。**底层其实是一种主题**(AI + 地缘紧张)。如果 AI capex 减速 / 中美缓和,这 4 个**会同时受损**。
-- 这**不是**分散,是**伪装的集中**。
+### D. 给你的 "看完这份不要立即建仓清单"
 
-**和你的红线对比**:你说"不能所有票一起 -25%"。把卫星里再加这 4 个主题,等于把"所有票一起 -25%"的概率**加倍**,而不是降低。
+按你 5/13 提醒 #6:**24h 内不准建仓**。这份 PDF 看完今天什么都别做。
 
-### D. 你最近一周的"主题轰炸"
-
-| # | 来源 | 推荐 | 你的反应/我的回复 |
-|---|---|---|---|
-| 1 | Bernstein 研报 | CPO/连接 | 你冲进 CIEN $1,160 = 17% NAV(超线) |
-| 2 | serenity 博主(X) | Nextronics 台股 CPO | 买不到,但你心动了 |
-| 3 | 智润博主 | BABA $185 → $200+ | 你拿来要求"证据支撑" |
-| 4 | **现在你自己** | 核能+机器人+无人机+军工 4 个板块 | **你在向我索取 confirmation** |
-
-**模式每次一样**:外部输入 → 数字/图激动 → 让 AI/研究给你 confirmation → 下单 → 修正。**这条规则不是给你看的,是给这种时刻用的**(repo 里 5/13 提醒第 6 条):
-
-> **看完任何研报/新闻/博主推荐,24h 内不准建仓。**
+**今天该做的事(按优先级)**:
+1. **24h 冷静**
+2. **完成 5/13 de-scatter 剩余部分**:DTCR/DRAM ETF 清理(你反向加了)、决定 GLD 是否买回
+3. **新坑写 thesis**:QCOM / MRNA / ASTS 各一行(为什么持有、止损位、目标价)。写不出 → 平仓
+4. **以上做完后**,再考虑这 4 板块里**挑 1 个**(不是 4 个一起)走自己的 6 步清单
+5. **资金来源**:必须从砍现有 AI / CPO 仓位来,不从核心来
 
 ---
 
-## 七、看完这份不要立即建仓清单
+## 附录:数据来源(2026-05-13 / 14 WebSearch)
 
-按你 5/13 提醒第 6 条,**这份看完今天什么都别做**。
+### 核能 / 铀
+- [Investor Ideas — Nuclear Stocks in Focus 5/13/2026](https://www.investorideas.com/news/2026/energy/05131-nuclear-stocks-ai-power-demand.asp)
+- [Sprott Uranium Miners ETF (URNM) — Yahoo Finance](https://finance.yahoo.com/quote/URNM/)
+- [Cameco CCJ — Yahoo Finance](https://finance.yahoo.com/quote/CCJ/)
+- [BWXT — Yahoo Finance](https://finance.yahoo.com/quote/BWXT/)
+- [Constellation CEG — Yahoo Finance](https://finance.yahoo.com/quote/CEG/)
+- [Vistra VST — Yahoo Finance](https://finance.yahoo.com/quote/VST/)
+- [Oklo OKLO — Yahoo Finance](https://finance.yahoo.com/quote/OKLO/)
+- [NuScale SMR — Yahoo Finance](https://finance.yahoo.com/quote/SMR/)
+- [Uranium Price Update Q1 2026 — INN](https://investingnews.com/uranium-forecast/)
+- [Uranium Outlook 2026 — Sprott ETFs](https://sprottetfs.com/insights/uranium-outlook-2026/)
 
-### 这 24 小时该做的(按优先级)
+### 机器人
+- [BOTZ — Global X](https://www.globalxetfs.com/funds/botz)
+- [Humanoid Robot Boom 3 ETFs — 24/7 Wall St 4/24/2026](https://247wallst.com/investing/2026/04/24/the-humanoid-robot-boom-is-here-these-3-etfs-capture-the-entire-supply-chain/)
+- [8 Best Robotics Stocks 2026 — Motley Fool](https://www.fool.com/investing/stock-market/market-sectors/information-technology/robotics-stocks/)
+- [Beyond the Hype: Investing in Robotics 2026 — RoboHorizon](https://robohorizon.com/en-us/magazine/2026/01/beyond-the-hype-a-brutally-honest-guide-to-investing-in-robotics-in-2026/)
 
-- [ ] **24h 冷静**:今天不下单。
-- [ ] **完成 5/13 de-scatter**:CIEN 卖 1 股(回到 ~8.5%)、SNDK 清掉(和 MU 重复)— 这是当前**唯一确定能降风险的动作**。
-- [ ] 用腾出的现金 ≈ $1,100 + 现有 $1,461 ≈ **~$2,560 加 SPY/QQQ**,把核心从 ~15% 拉向 ~30%+。
-- [ ] 决定 GLD 要不要买回 — 现在裸奔无对冲,**加任何新主题之前先决定这条**。
+### 无人机
+- [ONDS/RCAT/AVAV/KTOS US Defense Budget Sparks Drone Rally — Stocktwits](https://stocktwits.com/news-articles/markets/equity/onds-rcat-avav-ktos-dpro-us-defense-budget-sparks-drone-stock-rally-overnight/cZBBiSIReGc)
+- [Which Drone Stock Dominates Next War — 24/7 Wall St 5/3/2026](https://247wallst.com/investing/2026/05/03/which-drone-stock-will-dominate-the-next-war-avav-ktos-or-onds/)
+- [AVAV — Yahoo Finance](https://finance.yahoo.com/quote/AVAV/)
+- [KTOS — Yahoo Finance](https://ca.finance.yahoo.com/quote/KTOS/)
+- [RCAT — Yahoo Finance](https://finance.yahoo.com/quote/RCAT/)
+- [Top Military Drone Stocks 2026 — ExoSwan](https://exoswan.com/military-drone-stocks/)
 
-### 然后(完成 de-scatter 之后)才考虑
+### 军工 / Golden Dome
+- [LMT — Yahoo Finance](https://finance.yahoo.com/quote/LMT/)
+- [XAR — Yahoo Finance](https://finance.yahoo.com/quote/XAR/)
+- [Trillion-Dollar Defense Budget — TheStreet](https://www.thestreet.com/investing/top-defense-stocks-profiting-from-our-trillion-dollar-budget)
+- [Golden Dome Wikipedia](https://en.wikipedia.org/wiki/Golden_Dome_(missile_defense_system))
+- [Golden Dome for America — Lockheed Martin](https://www.lockheedmartin.com/en-us/capabilities/missile-defense/golden-dome-missile-defense.html)
+- [Space Force names 12 companies for Golden Dome — DefenseScoop 4/24/2026](https://defensescoop.com/2026/04/24/golden-dome-space-based-interceptor-missile-defense-contractors/)
+- [USSF Reveals $3.2B for Golden Dome — Air & Space Forces](https://www.airandspaceforces.com/space-force-reveals-space-based-interceptor-awards-golden-dome/)
+- [Golden Dome $1.2T CBO estimate — US News 5/12/2026](https://www.usnews.com/news/top-news/articles/2026-05-12/us-budget-watchdog-estimates-golden-dome-will-cost-1-2-trillion-well-above-initial-185-billion-estimate)
+- [Golden Dome cost $1.2T — NPR 5/13/2026](https://www.npr.org/2026/05/13/g-s1-121780/trumps-golden-dome-cost)
+- [US Defense Spending +17% — Arms Control Association](https://www.armscontrol.org/act/2026-03/news/us-defense-spending-rises-more-17-percent)
 
-- [ ] 选 1 个主题(**只 1 个**,不是 4 个一起)写出自己的 6 步清单
-- [ ] 写完后还想买,在 ≤5% NAV 上限内建仓
-- [ ] 资金从砍 SNDK / 部分 CIEN 来,**不**从砍 GOOG/SPY 来
-- [ ] 新主题总暴露 ≤ 15% NAV
+### 数据声明
 
-### 如果发现自己又开始觉得"这次不一样、我要全冲进去"
-
-- [ ] 回看 CIEN 17% 那个标本
-- [ ] 回看你的红线("所有票一起 -25% 不能接受")
-- [ ] 然后**关掉手机**
-
----
-
-## 附录 A:数据可靠性 / 引用说明
-
-- **行业结构、价值链、长期驱动、主要风险**:基于通用行业知识,在我 2026-01 知识截止前的事实层面是稳的
-- **2026-02 之后的政策/财报/股价**:**我没法核实**(无外网、新闻 MCP 故障)。**你看到任何具体名字之前要去 TradingView 查现价 + 最近一次财报趋势**
-- **目标价 / 估值倍数**:本文给的 P/E 区间是粗略口径,**用作"是不是便宜"的 sanity check,不是精确数字**;实操前必须自己拉财报和共识预期
-- **ETF 持仓 / 权重**:可能随时变,买前看官网最新
-
-## 附录 B:这份的"非建议"声明
-
-这是行业地图 + 评估框架,**不是买卖建议**。每一个具体仓位的决策必须:
-1. 你自己走完 6 步清单
-2. 你自己写一行可证伪的 thesis(包括止损价位)
-3. 仓位 ≤ 你的 8-10% NAV 单仓上限
-4. 资金从砍现有相关仓位来(不净加)
-5. 经过 24 小时冷静期
-
-走不完这 5 条,就不该有这一笔。
+所有报价 / catalysts 来自 2026-05-13 / 14 的 WebSearch 结果。**这份不构成投资建议**;实操前必须自己再核对最新价格(行情会跳)、最近一次财报趋势,并通过自己的 6 步清单。

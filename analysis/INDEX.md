@@ -17,7 +17,7 @@
 | 日期 | 路径 | 主题 | 框架版本 |
 |---|---|---|---|
 | 2026-05-14 | `portfolio/2026-05-14_trade_history_review_and_holdings_v3.md` | 5/12-5/13 全部交易解析(9 卖 8 买 5 取消 7 trailing stop)+ 持仓 v3 + 对照 5/13 清单逐项打分(A+ 到 F) | 仓位管理(执行复盘)|
-| 2026-05-14 | `research/2026-05-14_4_sectors_deep_research.md` + `.pdf` | 核能 / 机器人 / 无人机 / 军工四板块深度研究 PDF(14 页)| Layer 1 / 行业地图 |
+| 2026-05-14 | `research/2026-05-14_4_sectors_deep_research.md` + `.pdf` | **v2 修订版**:核能 / 机器人 / 无人机 / 军工 4 板块深度研究(9 页 PDF,**基于 5/13-5/14 WebSearch 实时数据**;v1 错把 LMT 当"历史高位",实际是 -25% from 52w 高;含 Golden Dome 12 家中标厂、SMR -79% 崩盘、CCJ +150% YoY 等真实 catalysts + 完整数据来源)| Layer 1 / 行业地图(实时数据)|
 | 2026-05-14 | `research/2026-05-14_baba_zhirun_thesis_review.md` | 智润博主 BABA 多头推文 vs 内部 SOTP 备忘录 V2 对比 + 6 步走查 + "不该基于这个建仓"实操结论 | Layer 1 / 博主输入审查 |
 | 2026-05-14 | `research/2026-05-14_nextronics_serenity_thesis_review.md` | X 博主 serenity 的 Nextronics(台股)CPO 多头论调审查 + 和 Bernstein 一致性对比 + 6 步走查 | Layer 1 / 博主输入审查 |
 | 2026-05-13 | `briefings/2026-05-13_execution_checklist_and_optical_walkthrough.md` | de-scatter 执行清单(5/13 开盘可执行)+ 用 COHR 走一遍"评估长期持仓 6 步" | 仓位管理 + Layer 1 |
