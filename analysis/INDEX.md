@@ -1,31 +1,50 @@
 # Analysis Index
 
-按时间倒序排列。每份分析旁标注"应用的框架版本"。
+按时间倒序 + 按类别(`portfolio/` / `briefings/` / `research/`)分目录。每份标"应用的框架版本"。
 
-| 日期 | 文件 | 主题 | 框架版本 |
+## 目录速览
+
+| 子目录 | 装什么 | 何时翻 |
+|---|---|---|
+| `portfolio/` | 持仓快照、操作复盘、客户画像、交易历史评分 | 想知道**"我现在有什么 / 这周交易做对做错了什么"** |
+| `briefings/` | 盘前简报、当周/明早执行清单、情境手册 | **开盘前**或想知道**"接下来要按什么顺序操作"** |
+| `research/` | 行业深度研究、标的 6 步评估、博主推文审查 | 想搞清**"这只票 / 这个板块到底值不值得关注"** |
+
+---
+
+## 全部文件(时间倒序)
+
+| 日期 | 路径 | 主题 | 框架版本 |
 |---|---|---|---|
-| 2026-05-14 | `2026-05-14_trade_history_review_and_holdings_v3.md` | 5/12-5/13 全部交易解析(9 卖 8 买 5 取消 7 trailing stop)+ 持仓 v3 重构 + 对照 5/13 清单逐项打分(A+ 到 F)+ 亮点 6 条 + 错误 7 条 + 新画像 + wash sale 提醒 | 仓位管理(执行复盘)|
-| 2026-05-14 | `2026-05-14_4_sectors_deep_research.md` + `.pdf` | 核能 / 机器人 / 无人机 / 军工四板块深度研究 PDF(14 页)| Layer 1 / 行业地图 |
-| 2026-05-14 | `2026-05-14_baba_zhirun_thesis_review.md` | 智润博主 BABA 多头推文 vs 内部 SOTP 备忘录 V2 对比 + 6 步走查 + "不该基于这个建仓"实操结论(MCP 新闻源故障,无法外部核实 FY26Q4 具体数字)| Layer 1 / 博主输入审查 |
-| 2026-05-14 | `2026-05-14_nextronics_serenity_thesis_review.md` | X 博主 serenity 的 Nextronics(8147/8417 台股)CPO 多头论调审查 + 和 Bernstein 一致性对比 + 6 步走查 + 对你"不可操作"的实操结论 | Layer 1 / 博主输入审查 |
-| 2026-05-13 | `2026-05-13_execution_checklist_and_optical_walkthrough.md` | de-scatter 执行清单（5/13 开盘可执行）+ 用 COHR 走一遍"评估长期持仓 6 步" | 框架外（仓位管理 + Layer 1）|
-| 2026-05-12 | `2026-05-12_holdings_update_and_ops_review.md` | 持仓更新 + 5/11–5/12 操作逐笔评价（ASTS/CRWV 纪律性退出 A+；NVDA 3天期权 F；CIEN 超额建仓）+ GOOG 卖出决策 + 客户画像 v2 草稿 + "太分散/热门板块"概念回答 | 框架外（仓位管理）|
-| 2026-05-12 | `2026-05-12_ai_datacenter_connectivity_bernstein.md` | Bernstein《AI 数据中心连接大战》研报总结 + 散户视角分析（主题/watch list 输入，非催化剂）| 框架外（Layer 1）|
-| 2026-05-11 | `2026-05-11_execution_plan_and_asts_playbook.md` | **周一执行计划 + ASTS 财报 4 情境手册 + LITX 迷你案例**（首个完整案例归档）| **v0.8** |
-| 2026-05-11 | `2026-05-11_v0.8_framework_application.md` | v0.8 框架应用：ASTS 财报应对 + 组合体检 | v0.8 |
-| 2026-05-11 | `2026-05-11_deep_dive_asts_crwv_capital_deployment.md` | ASTS 最优解 + CRWV 处理 + 资金部署（MU +47% 发现）| v0.6（pre v0.8）|
-| 2026-05-11 | `2026-05-11_evening_decisions_review.md` | 用户拟定 5 个明早动作的诊断 | v0.6 |
-| 2026-05-11 | `2026-05-11_pre_market_briefing.md` | 美伊战争 / SPY 估值 / ASTS 财报 / 6 标的诊断 | v0.6 |
-| 2026-05-10 | `2026-05-10_portfolio_review.md` | 客户画像 + 首次完整持仓复盘 + 操作方案 | （无框架）|
+| 2026-05-14 | `portfolio/2026-05-14_trade_history_review_and_holdings_v3.md` | 5/12-5/13 全部交易解析(9 卖 8 买 5 取消 7 trailing stop)+ 持仓 v3 + 对照 5/13 清单逐项打分(A+ 到 F) | 仓位管理(执行复盘)|
+| 2026-05-14 | `research/2026-05-14_4_sectors_deep_research.md` + `.pdf` | 核能 / 机器人 / 无人机 / 军工四板块深度研究 PDF(14 页)| Layer 1 / 行业地图 |
+| 2026-05-14 | `research/2026-05-14_baba_zhirun_thesis_review.md` | 智润博主 BABA 多头推文 vs 内部 SOTP 备忘录 V2 对比 + 6 步走查 + "不该基于这个建仓"实操结论 | Layer 1 / 博主输入审查 |
+| 2026-05-14 | `research/2026-05-14_nextronics_serenity_thesis_review.md` | X 博主 serenity 的 Nextronics(台股)CPO 多头论调审查 + 和 Bernstein 一致性对比 + 6 步走查 | Layer 1 / 博主输入审查 |
+| 2026-05-13 | `briefings/2026-05-13_execution_checklist_and_optical_walkthrough.md` | de-scatter 执行清单(5/13 开盘可执行)+ 用 COHR 走一遍"评估长期持仓 6 步" | 仓位管理 + Layer 1 |
+| 2026-05-12 | `portfolio/2026-05-12_holdings_update_and_ops_review.md` | 持仓更新 + 5/11–5/12 操作逐笔评价 + GOOG 卖出决策 + 客户画像 v2 草稿 + "太分散/热门板块"概念回答 | 仓位管理 |
+| 2026-05-12 | `research/2026-05-12_ai_datacenter_connectivity_bernstein.md` | Bernstein《AI 数据中心连接大战》研报总结 + 散户视角分析 | Layer 1 |
+| 2026-05-11 | `briefings/2026-05-11_execution_plan_and_asts_playbook.md` | **周一执行计划 + ASTS 财报 4 情境手册 + LITX 迷你案例**(v0.8 首个完整案例)| **v0.8** |
+| 2026-05-11 | `portfolio/2026-05-11_v0.8_framework_application.md` | v0.8 框架应用:ASTS 财报应对 + 组合体检 | v0.8 |
+| 2026-05-11 | `portfolio/2026-05-11_deep_dive_asts_crwv_capital_deployment.md` | ASTS 最优解 + CRWV 处理 + 资金部署(MU +47% 发现)| v0.6 |
+| 2026-05-11 | `portfolio/2026-05-11_evening_decisions_review.md` | 用户拟定 5 个明早动作的诊断 | v0.6 |
+| 2026-05-11 | `briefings/2026-05-11_pre_market_briefing.md` | 美伊战争 / SPY 估值 / ASTS 财报 / 6 标的诊断 | v0.6 |
+| 2026-05-10 | `portfolio/2026-05-10_portfolio_review.md` | 客户画像 + 首次完整持仓复盘 + 操作方案(起点)| (无框架)|
+
+---
 
 ## 阅读建议
 
-**新读者从这里开始**：
+**新读者从这里开始**:
 1. `../strategy/framework_v0.8.md` — 理解策略框架
-2. `2026-05-10_portfolio_review.md` — 用户画像与起点
-3. `2026-05-11_v0.8_framework_application.md` — 最新决策依据
+2. `portfolio/2026-05-10_portfolio_review.md` — 客户画像与起点
+3. `portfolio/2026-05-14_trade_history_review_and_holdings_v3.md` — 最新持仓和最近一周操作打分
 
-**事件驱动决策时**：
-- 财报前：查 framework_v0.8 §5（阶段 A）
-- 财报后：查 framework_v0.8 §6（决策树）+ §7（阶段 B）+ §8（阶段 C）
-- 实盘日：查最新 daily briefing
+**事件驱动决策时**:
+- 财报前:查 `../strategy/framework_v0.8.md` §5(阶段 A)
+- 财报后:查 §6(决策树)+ §7(阶段 B)+ §8(阶段 C)
+- 实盘日:查 `briefings/` 里最新一份
+
+**收到外部信息(博主/研报/新闻)想建仓时**:
+1. 先看 `research/` 里是否已经有评估
+2. 看完任何主题文,**24 小时内不准建仓**(`portfolio/2026-05-12_...md` 第七节"本周新增提醒")
+3. 走 6 步清单(参考 `briefings/2026-05-13_..._optical_walkthrough.md` 第二部分,COHR 走过的实例)
