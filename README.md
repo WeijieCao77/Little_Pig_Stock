@@ -35,7 +35,8 @@
 │   ├── 2026-05-11_pre_market_briefing.md
 │   └── 2026-05-10_portfolio_review.md       # 起点：客户画像
 └── tools/
-    └── tv_market_structure.pine             # TradingView 指标：顶底 + BOS/CHoCH（看图辅助，非信号）
+    ├── tv_market_structure.pine             # TradingView 指标：顶底 + BOS/CHoCH（看图辅助，非信号）
+    └── md_to_pdf.py                         # Markdown → PDF（中文 / xhtml2pdf + WenQuanYi）
 ```
 
 ## 策略框架（v0.8）
