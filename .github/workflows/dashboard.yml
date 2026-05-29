@@ -1,0 +1,49 @@
+name: Refresh Dashboard (Pages)
+
+# 每 30 分钟刷新一次实时 dashboard,发布到 GitHub Pages —— 零 commit 污染。
+# 也可在 Actions 页面手动点 "Run workflow" 立即刷新。
+
+on:
+  schedule:
+    # cron 用 UTC。美东交易时段 9:30–16:00 ET = 夏令时(EDT)13:30–20:00 UTC。
+    # 下面每个工作日 UTC 13:00–20:30 的整点/半点各跑一次(~9:00–16:30 ET,略宽松)。
+    # 注:冬令时(EST,11 月–3 月)会整体偏移 1 小时,需要时把 13-20 改成 14-21。
+    - cron: "0,30 13-20 * * 1-5"
+  workflow_dispatch: {}        # 手动刷新按钮
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install --quiet yfinance matplotlib
+      - name: Generate live dashboard
+        run: python tools/portfolio_stats.py --html
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

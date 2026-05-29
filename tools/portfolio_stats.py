@@ -21,7 +21,7 @@ import datetime
 ACCOUNT = {
     "as_of": "2026-05-29",
     "nav": 7310.46,          # Total in Robinhood
-    "cash": 2051.67,         # 现金(CIEN 减仓后约 2598,这里用快照值)
+    "cash": 2597.76,         # 现金(CIEN 减 1 股 @$546 后:2051.67 + 546.09)
     "net_deposits": 6675.08, # 历史净入金(含 bonus)
 }
 
@@ -165,7 +165,66 @@ def make_charts(realized, unreal, by_date):
     fig2.tight_layout(); fig2.savefig("assets/pnl_by_ticker.png", dpi=140); plt.close(fig2)
 
 
+def generate_site(pos, cost, realized, unreal, price_mode):
+    """生成 site/index.html(GitHub Pages 用,实时数据,零 commit)。"""
+    import os, shutil, datetime
+    os.makedirs("site", exist_ok=True)
+    for png in ("pnl_curve.png", "pnl_by_ticker.png"):
+        if os.path.exists(f"assets/{png}"):
+            shutil.copy(f"assets/{png}", f"site/{png}")
+    TR = sum(realized.values()) + sum(OPTIONS_REALIZED.values())
+    TU = sum(unreal.values())
+    hold_mv = sum(PRICES[t] * pos[t] for t in PRICES if pos.get(t, 0) > 1e-6)
+    opt_mv = sum(OPTIONS_OPEN.values())
+    live_nav = ACCOUNT["cash"] + hold_mv + opt_mv      # 实时估算 NAV(现金为快照值)
+    total = live_nav - ACCOUNT["net_deposits"]
+    ret = total / ACCOUNT["net_deposits"] * 100
+    ts = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+    live = price_mode == "live"
+    rows = ""
+    for t in sorted(pos):
+        if pos[t] > 1e-6:
+            mv = PRICES.get(t, 0) * pos[t]; u = unreal.get(t, 0)
+            c = "#2ca02c" if u >= 0 else "#d62728"
+            rows += (f"<tr><td><b>{t}</b></td><td>{pos[t]:.3f}</td><td>${cost[t]/pos[t]:.2f}</td>"
+                     f"<td>${PRICES.get(t,0):.2f}</td><td>${mv:.0f}</td>"
+                     f"<td style='color:{c}'>{u:+.0f}</td><td>{THEME.get(t,'')}</td></tr>")
+    def badge(lab, val, col): return (f"<span style='background:#555;color:#fff;padding:3px 7px;border-radius:4px 0 0 4px;font-size:12px'>{lab}</span>"
+                                      f"<span style='background:{col};color:#fff;padding:3px 7px;border-radius:0 4px 4px 0;font-size:12px;margin-right:8px'>{val}</span>")
+    pc = "#2ca02c" if total >= 0 else "#d62728"
+    html = f"""<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="900">
+<title>🐷 Little Pig Stock — Dashboard</title>
+<style>body{{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:920px;margin:0 auto;padding:18px;color:#1a1a1a;background:#fff}}
+h1{{color:#0d3a66}}table{{border-collapse:collapse;width:100%;margin:8px 0}}
+th,td{{border:1px solid #d8d8d8;padding:5px 8px;font-size:13px;text-align:left}}
+th{{background:#e8eef5;color:#0d3a66}}img{{max-width:100%;height:auto;border:1px solid #eee;border-radius:6px}}
+.cards{{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}}
+.card{{flex:1;min-width:150px;background:#f4f7fb;border:1px solid #d0dceb;border-radius:8px;padding:10px}}
+.card .t{{font-size:12px;color:#555}}.card .v{{font-size:20px;font-weight:bold}}
+small{{color:#888}}</style></head><body>
+<h1>🐷 Little Pig Stock — Dashboard</h1>
+<p>{badge("Live NAV", f"${live_nav:,.0f}", "#1f6feb")}{badge("Total Return", f"{ret:+.1f}%", pc)}{badge("Prices", "LIVE" if live else "fallback", "#2ca02c" if live else "#e3b341")}{badge("Updated", ts, "#9aa0a6")}</p>
+<div class="cards">
+<div class="card"><div class="t">实时估算 NAV</div><div class="v">${live_nav:,.0f}</div></div>
+<div class="card"><div class="t">总盈亏(NAV−入金)</div><div class="v" style="color:{pc}">{total:+,.0f} ({ret:+.1f}%)</div></div>
+<div class="card"><div class="t">已实现</div><div class="v" style="color:#2ca02c">+${TR:,.0f}</div></div>
+<div class="card"><div class="t">未实现(实时)</div><div class="v" style="color:{'#2ca02c' if TU>=0 else '#d62728'}">{TU:+,.0f}</div></div>
+</div>
+<h2>📦 当前持仓(实时)</h2>
+<table><tr><th>票</th><th>数量</th><th>均价</th><th>现价</th><th>市值</th><th>未实现</th><th>主题</th></tr>{rows}</table>
+<h2>📈 累计已实现盈亏</h2><img src="pnl_curve.png">
+<h2>🎯 逐票总盈亏</h2><img src="pnl_by_ticker.png">
+<p><small>价格 {'yfinance 实时' if live else '回退手填'} · NAV 含现金为账户快照({ACCOUNT['as_of']})值 · 每 15 分钟自动刷新本页 · 教育性非投资建议,下单请看券商实时报价。</small></p>
+</body></html>"""
+    with open("site/index.html", "w", encoding="utf-8") as f:
+        f.write(html)
+    print("site/index.html 已生成 ✓")
+
+
 def main():
+    import sys
     price_mode = fetch_live_prices()   # 本地有网=实时价;否则回退手填
     pos, cost, realized, unreal, by_date = compute()
     TR = sum(realized.values()) + sum(OPTIONS_REALIZED.values())
@@ -195,6 +254,8 @@ def main():
             print(f"  {t:6} {pos[t]:.4f} 股 @ avg ${cost[t]/pos[t]:.2f} | 现价 ${PRICES.get(t,0):.2f} "
                   f"| 市值 ${mv:.0f} | 未实现 ${unreal.get(t,0):+.0f} | {THEME.get(t,'?')}")
     print(f"\n价格模式: {price_mode}  |  {chart_msg}")
+    if "--html" in sys.argv:
+        generate_site(pos, cost, realized, unreal, price_mode)
     print("="*60)
 
 
