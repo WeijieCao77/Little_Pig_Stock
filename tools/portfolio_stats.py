@@ -87,6 +87,29 @@ THEME = {"MU":"AI硬件","CIEN":"AI光通信","QCOM":"半导体","ASTS":"太空"
          "SPY":"核心","DTCR":"AI数据中心","BB":"投机/软件"}
 
 
+def fetch_live_prices():
+    """本地有网时用 yfinance 拉实时价并更新 PRICES;无网/没装则保留手填值(优雅回退)。"""
+    try:
+        import yfinance as yf
+    except ImportError:
+        print("[价格] 未装 yfinance → 用手填 PRICES。本地启用实时价: pip install yfinance")
+        return "fallback(no-lib)"
+    ok = []
+    for t in list(PRICES):
+        try:
+            info = yf.Ticker(t).fast_info
+            px = info.get("last_price") or info.get("lastPrice")
+            if px and float(px) > 0:
+                PRICES[t] = round(float(px), 2); ok.append(t)
+        except Exception:
+            pass
+    if ok:
+        print(f"[价格] ✓ yfinance 实时价已更新: {', '.join(ok)}")
+        return "live"
+    print("[价格] yfinance 取价失败(可能本环境无外网)→ 用手填 PRICES")
+    return "fallback(no-net)"
+
+
 def compute():
     pos, cost, realized = defaultdict(float), defaultdict(float), defaultdict(float)
     by_date = defaultdict(float)
@@ -143,6 +166,7 @@ def make_charts(realized, unreal, by_date):
 
 
 def main():
+    price_mode = fetch_live_prices()   # 本地有网=实时价;否则回退手填
     pos, cost, realized, unreal, by_date = compute()
     TR = sum(realized.values()) + sum(OPTIONS_REALIZED.values())
     TU = sum(unreal.values())
@@ -170,7 +194,7 @@ def main():
             mv = PRICES.get(t, 0)*pos[t]
             print(f"  {t:6} {pos[t]:.4f} 股 @ avg ${cost[t]/pos[t]:.2f} | 现价 ${PRICES.get(t,0):.2f} "
                   f"| 市值 ${mv:.0f} | 未实现 ${unreal.get(t,0):+.0f} | {THEME.get(t,'?')}")
-    print(f"\n{chart_msg}")
+    print(f"\n价格模式: {price_mode}  |  {chart_msg}")
     print("="*60)
 
 
