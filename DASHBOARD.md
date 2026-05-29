@@ -124,4 +124,4 @@
 
 ---
 
-<sub>📁 详见 `analysis/portfolio/`（复盘）· `strategy/strategy_v1.0_simple.md`（策略）· `analysis/portfolio/2026-05-29_client_profile_v2.md`（画像）。本页由 `tools/portfolio_stats.py` 驱动,每次更新交易后重跑刷新。</sub>
+<sub>📁 详见 `journal/reviews/`（复盘）· `strategy/strategy_v1.0_simple.md`（策略）· `profile/client_profile_v2.md`（画像）。本页由 `tools/portfolio_stats.py` 驱动,每次更新交易后重跑刷新。</sub>

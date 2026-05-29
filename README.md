@@ -20,48 +20,43 @@
 - **账户规模**：**$7,310.46**（Robinhood 真实账户总览,2026-05-29;持仓 $5,258.79 + 现金 $2,051.67,无加密）
 - **历史净入金**：~$6,675（含 5/13 一笔 +$5,000;开户至今总盈利仅 ~+$635 / +9.5%）
 - **风险偏好**：成长偏激进；账户层面回撤承受 ~-15-20%;单股 -25% 可接受;不能所有票一起 -25%
-- **当前 YTD**：⚠️ **待核实**（旧记录称 +49%,但与完整交易历史对不上——真实账户回报约 +9.5%;+49% 可能指某早期阶段或单笔如 MU +39%,详见 `analysis/portfolio/2026-05-29_*.md` 第〇节）
+- **当前 YTD**：⚠️ **待核实**（旧记录称 +49%,但与完整交易历史对不上——真实账户回报约 +9.5%;+49% 可能指某早期阶段或单笔如 MU +39%,详见 `journal/reviews/2026-05-29_trade_history_review_and_holdings_v4.md`）
 - **当前持仓**（2026-05-29 实时）：CIEN 1 股（财报前已减 1 股）/ MU 1 股（另挂 $900 limit 加仓,建议撤）/ QCOM 3 股 / SPY ~1.375 股 / DTCR ~16.74 股 / **ASTS 5 股（5/29 再入 @$107.89）** / BB 30 股 + DJT 6/18 call + BB 6/12 call;NVDA/MRNA/BE/TSLA/BTC/GLD 等已全平
 
 ## 🗂️ 目录结构
 
 ```
 .
-├── README.md                                # 你在看的文件
-├── DASHBOARD.md                             # 📊 统计仪表盘（徽章 + 盈亏曲线 + 各项数据）
-├── assets/                                  # 图表图片（由脚本生成）
+├── README.md                       # 你在看的文件（总览 + 导航）
+├── DASHBOARD.md                    # 📊 当前快照（徽章 + 盈亏曲线 + 各项统计）
+│
+├── profile/                        # 👤 客户画像（我是谁）
+│   └── client_profile_v2.md        #    ⭐ 画像 v2.0（从头重建）
+│
+├── strategy/                       # 🪣 策略
+│   ├── strategy_v1.0_simple.md     #    ⭐ 当前在用：极简四桶策略
+│   ├── CHANGELOG.md                #    策略版本史
+│   └── archive/                    #    旧框架（一位有金融背景的友人的专业框架,进阶参考）
+│       ├── framework_v0.8.md  (+ _original.pdf)
+│       └── framework_v0.6.md  (+ _original.pdf)
+│
+├── journal/                        # 📓 交易日志（按日期）
+│   ├── INDEX.md                    #    日志索引
+│   ├── reviews/                    #    持仓 / 操作复盘
+│   │   ├── 2026-05-10 … 2026-05-14_…_v3.md
+│   │   └── 2026-05-29_…_holdings_v4.md
+│   └── briefings/                  #    盘前简报 / 执行清单
+│
+├── research/                       # 🔬 行业研究 / 标的评估 / 博主推文审查
+│
+├── assets/                         # 🖼️ 图表图片（由脚本生成）
 │   ├── pnl_curve.png
 │   └── pnl_by_ticker.png
-├── strategy/                                # 策略
-│   ├── strategy_v1.0_simple.md              # ⭐ 当前在用：极简四桶策略（PM 专属）
-│   └── archive/                             # 归档（含一位有金融背景的友人做的专业事件驱动框架,留作进阶参考）
-│       ├── CHANGELOG.md                     # 版本历史与变化
-│       ├── framework_v0.8.md                # v0.8 专业事件驱动框架（已归档）
-│       ├── framework_v0.8_original.pdf
-│       ├── framework_v0.6.md
-│       └── framework_v0.6_original.pdf
-├── analysis/                                # 所有分析,按用途分 3 个子目录
-│   ├── INDEX.md                             # 索引（按日期 + 子目录速览）
-│   ├── portfolio/                           # 持仓 / 操作复盘 / 客户画像 / 交易历史评分
-│   │   ├── 2026-05-10_portfolio_review.md
-│   │   ├── ...
-│   │   ├── 2026-05-14_trade_history_review_and_holdings_v3.md
-│   │   ├── 2026-05-29_trade_history_review_and_holdings_v4.md
-│   │   └── 2026-05-29_client_profile_v2.md  # ⭐ 客户画像 v2.0（从头重建）
-│   ├── briefings/                           # 盘前简报 / 执行清单 / 情境手册
-│   │   ├── 2026-05-11_pre_market_briefing.md
-│   │   ├── 2026-05-11_execution_plan_and_asts_playbook.md
-│   │   └── 2026-05-13_execution_checklist_and_optical_walkthrough.md
-│   └── research/                            # 行业研究 / 标的 6 步评估 / 博主推文审查
-│       ├── 2026-05-12_ai_datacenter_connectivity_bernstein.md
-│       ├── 2026-05-14_4_sectors_deep_research.md
-│       ├── 2026-05-14_4_sectors_deep_research.pdf
-│       ├── 2026-05-14_baba_zhirun_thesis_review.md
-│       └── 2026-05-14_nextronics_serenity_thesis_review.md
-└── tools/                                   # 复用工具
-    ├── portfolio_stats.py                   # ⭐ Dashboard 数据源：算盈亏 + 生成图表
-    ├── tv_market_structure.pine             # TradingView 指标：顶底 + BOS/CHoCH + 回调参考区
-    └── md_to_pdf.py                         # Markdown → PDF（中文 / xhtml2pdf + WenQuanYi）
+│
+└── tools/                          # 🛠️ 脚本
+    ├── portfolio_stats.py          #    ⭐ Dashboard 数据源：算盈亏 + 生成图表
+    ├── tv_market_structure.pine    #    TradingView 指标
+    └── md_to_pdf.py                #    Markdown → PDF（中文）
 ```
 
 ## 🪣 当前策略：极简四桶 v1.0
@@ -91,7 +86,7 @@
 2. **想买新票**：走卫星 5 条准入 → 过了就分 3 次建仓 + 挂止损 + 记一行逻辑;没过就进赌场或放观察清单。
 3. **看到博主/新闻心动**：写进观察清单,**24h 内不下单**。
 4. **亏损时**：让事先挂好的止损替你执行,❌ 不许对没设止损的票加仓摊低成本。
-5. **每周日**：复盘本周交易,归档为 `analysis/portfolio/YYYY-MM-DD_*.md`。
+5. **每周日**：复盘本周交易,归档为 `journal/reviews/YYYY-MM-DD_*.md`。
 
 ### Claude Code 工作流
 
@@ -115,3 +110,4 @@
 - 2026-05-14：核能/机器人/无人机/军工 4 板块深度研究 PDF + 持仓 v3 + 5/13 计划执行打分
 - 2026-05-29：完整订单历史(4/6–5/28)轧差 → 持仓 v4 + 现金/NAV 全核算;发现账户口径问题(真实回报 ~+9.5% vs 旧称 +49%);两周高频翻仓纪律复盘;5/29 校准真实 NAV $7,310 + CIEN 减 1 股 + ASTS 再入复盘
 - 2026-05-29：**客户画像 v2.0 从头重建** + **极简四桶策略 v1.0** 落地(替代 v0.8);v0.8(一位有金融背景的友人的专业事件驱动框架)移到 archive 作进阶参考
+- 2026-05-29：**仓库重整** —— `analysis/`→`journal/`(reviews+briefings)、画像独立成 `profile/`、`research/` 提顶层、`CHANGELOG` 提到 `strategy/` 根;分支精简为只留 `main`
