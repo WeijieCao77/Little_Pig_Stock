@@ -1,8 +1,18 @@
-# Little Pig Stock
+# 🐷 Little Pig Stock
 
-个人美股交易策略、分析和复盘仓库。
+> 个人美股交易策略、分析和复盘仓库。
 
-## 基本信息
+![NAV](https://img.shields.io/badge/NAV-%247%2C310-1f6feb)
+![Return](https://img.shields.io/badge/Total_Return-%2B9.5%25-2ca02c)
+![WinRate](https://img.shields.io/badge/Win_Rate-43%25-e3b341)
+![Strategy](https://img.shields.io/badge/Strategy-v1.0_4--bucket-orange)
+![Updated](https://img.shields.io/badge/Updated-2026--05--29-lightgrey)
+
+### 👉 [**打开 Dashboard 看实时统计 / 盈亏曲线 →**](DASHBOARD.md)
+
+---
+
+## 📌 基本信息
 
 - **持有人**：PM
 - **所在地**：美东时间
@@ -13,11 +23,15 @@
 - **当前 YTD**：⚠️ **待核实**（旧记录称 +49%,但与完整交易历史对不上——真实账户回报约 +9.5%;+49% 可能指某早期阶段或单笔如 MU +39%,详见 `analysis/portfolio/2026-05-29_*.md` 第〇节）
 - **当前持仓**（2026-05-29 实时）：CIEN 1 股（财报前已减 1 股）/ MU 1 股（另挂 $900 limit 加仓,建议撤）/ QCOM 3 股 / SPY ~1.375 股 / DTCR ~16.74 股 / **ASTS 5 股（5/29 再入 @$107.89）** / BB 30 股 + DJT 6/18 call + BB 6/12 call;NVDA/MRNA/BE/TSLA/BTC/GLD 等已全平
 
-## 目录结构
+## 🗂️ 目录结构
 
 ```
 .
 ├── README.md                                # 你在看的文件
+├── DASHBOARD.md                             # 📊 统计仪表盘（徽章 + 盈亏曲线 + 各项数据）
+├── assets/                                  # 图表图片（由脚本生成）
+│   ├── pnl_curve.png
+│   └── pnl_by_ticker.png
 ├── strategy/                                # 策略
 │   ├── strategy_v1.0_simple.md              # ⭐ 当前在用：极简四桶策略（PM 专属）
 │   └── archive/                             # 归档（含一位有金融背景的友人做的专业事件驱动框架,留作进阶参考）
@@ -45,11 +59,12 @@
 │       ├── 2026-05-14_baba_zhirun_thesis_review.md
 │       └── 2026-05-14_nextronics_serenity_thesis_review.md
 └── tools/                                   # 复用工具
+    ├── portfolio_stats.py                   # ⭐ Dashboard 数据源：算盈亏 + 生成图表
     ├── tv_market_structure.pine             # TradingView 指标：顶底 + BOS/CHoCH + 回调参考区
     └── md_to_pdf.py                         # Markdown → PDF（中文 / xhtml2pdf + WenQuanYi）
 ```
 
-## 当前策略：极简四桶 v1.0
+## 🪣 当前策略：极简四桶 v1.0
 
 > 完整规则见 `strategy/strategy_v1.0_simple.md`。这是 2026-05-29 基于真实客户画像(v2.0)从头重建的策略,**替代**了之前那套 v0.8 事件驱动框架(v0.8 是一位有金融背景的友人做的专业框架,已移到 `strategy/archive/` 作进阶参考)。
 
@@ -70,7 +85,7 @@
 
 **红线**：现金不低于 $1,000 / 赌场不超 $800 / 卫星单只不超 20% / 每只必挂止损 / 博主新闻 24h 冷静 / day-trade 每周 ≤1 次。
 
-## 使用方法（极简工作流）
+## 🧭 使用方法（极简工作流）
 
 1. **每天**：扫一眼持仓和止损单还在不在,没有过准入的新机会就**什么都不做**。
 2. **想买新票**：走卫星 5 条准入 → 过了就分 3 次建仓 + 挂止损 + 记一行逻辑;没过就进赌场或放观察清单。
@@ -86,7 +101,7 @@
 - 决策日志模板自动化
 - day-trade 次数 / 板块集中度自动统计
 
-## 历史里程碑
+## 🏁 历史里程碑
 
 - 2026-04-06：账户开户，首笔 SPY 买入
 - 2026-04-30：MU 买入 @ $513（事后看是绝佳入场，5/13 卖在 $716 = +39% / +$79 单笔最大盈利）
