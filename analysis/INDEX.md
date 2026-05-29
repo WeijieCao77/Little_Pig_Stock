@@ -16,6 +16,7 @@
 
 | 日期 | 路径 | 主题 | 框架版本 |
 |---|---|---|---|
+| 2026-05-29 | `portfolio/2026-05-29_trade_history_review_and_holdings_v4.md` | 完整订单历史(4/6–5/28)轧差 + 持仓 v4 + 现金/NAV 全核算 + 账户口径问题(+7% vs +49%)+ 5/14–5/28 高频翻仓纪律检查 | 仓位管理(执行复盘)|
 | 2026-05-14 | `portfolio/2026-05-14_trade_history_review_and_holdings_v3.md` | 5/12-5/13 全部交易解析(9 卖 8 买 5 取消 7 trailing stop)+ 持仓 v3 + 对照 5/13 清单逐项打分(A+ 到 F) | 仓位管理(执行复盘)|
 | 2026-05-14 | `research/2026-05-14_4_sectors_deep_research.md` + `.pdf` | 核能 / 机器人 / 无人机 / 军工四板块深度研究 PDF(14 页)| Layer 1 / 行业地图 |
 | 2026-05-14 | `research/2026-05-14_baba_zhirun_thesis_review.md` | 智润博主 BABA 多头推文 vs 内部 SOTP 备忘录 V2 对比 + 6 步走查 + "不该基于这个建仓"实操结论 | Layer 1 / 博主输入审查 |
@@ -37,7 +38,7 @@
 **新读者从这里开始**:
 1. `../strategy/framework_v0.8.md` — 理解策略框架
 2. `portfolio/2026-05-10_portfolio_review.md` — 客户画像与起点
-3. `portfolio/2026-05-14_trade_history_review_and_holdings_v3.md` — 最新持仓和最近一周操作打分
+3. `portfolio/2026-05-29_trade_history_review_and_holdings_v4.md` — 最新持仓(v4)、账户真实回报核算和最近两周操作复盘
 
 **事件驱动决策时**:
 - 财报前:查 `../strategy/framework_v0.8.md` §5(阶段 A)
