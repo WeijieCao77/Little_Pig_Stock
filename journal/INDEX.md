@@ -19,7 +19,7 @@
 | 2026-05-29 | `../profile/client_profile_v2.md` | **客户画像 v2.0(从头重建)**:新手成长型散户、最怕踏空、靠盘感、自述保守但行为激进;含真实风险画像/心理结构/策略设计约束 | 策略 v1.0(画像) |
 | 2026-05-29 | `reviews/2026-05-29_trade_history_review_and_holdings_v4.md` | 完整订单历史(4/6–5/28)轧差 + 持仓 v4 + 现金/NAV 全核算 + 账户口径问题(+9.5% vs +49%)+ 5/14–5/28 高频翻仓纪律检查 | 仓位管理(执行复盘)|
 | 2026-05-14 | `reviews/2026-05-14_trade_history_review_and_holdings_v3.md` | 5/12-5/13 全部交易解析(9 卖 8 买 5 取消 7 trailing stop)+ 持仓 v3 + 对照 5/13 清单逐项打分(A+ 到 F) | 仓位管理(执行复盘)|
-| 2026-05-14 | `../research/2026-05-14_4_sectors_deep_research.md` + `.pdf` | 核能 / 机器人 / 无人机 / 军工四板块深度研究 PDF(14 页)| Layer 1 / 行业地图 |
+| 2026-05-14 | `../research/2026-05-14_4_sectors_deep_research.md` | 核能 / 机器人 / 无人机 / 军工四板块深度研究(14 页;PDF 可用 `tools/md_to_pdf.py` 本地生成)| Layer 1 / 行业地图 |
 | 2026-05-14 | `../research/2026-05-14_baba_zhirun_thesis_review.md` | 智润博主 BABA 多头推文 vs 内部 SOTP 备忘录 V2 对比 + 6 步走查 + "不该基于这个建仓"实操结论 | Layer 1 / 博主输入审查 |
 | 2026-05-14 | `../research/2026-05-14_nextronics_serenity_thesis_review.md` | X 博主 serenity 的 Nextronics(台股)CPO 多头论调审查 + 和 Bernstein 一致性对比 + 6 步走查 | Layer 1 / 博主输入审查 |
 | 2026-05-13 | `briefings/2026-05-13_execution_checklist_and_optical_walkthrough.md` | de-scatter 执行清单(5/13 开盘可执行)+ 用 COHR 走一遍"评估长期持仓 6 步" | 仓位管理 + Layer 1 |
